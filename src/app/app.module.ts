@@ -8,6 +8,12 @@ import { MapaComponent } from './mapa/mapa.component';
 import { FiltroComponent } from './filtro/filtro.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { TiendaComponent } from './tienda/tienda.component';
+import { ProductosComponent } from './productos/productos.component';
+import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
+import { FormProductoresComponent } from './form-productores/form-productores.component';
+import { FormProductoComponent } from './form-producto/form-producto.component';
+import { LoginComponent } from './login/login.component';
+import { ProductorDetalleComponent } from './productor-detalle/productor-detalle.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { TiendaComponent } from './tienda/tienda.component';
     MapaComponent,
     FiltroComponent,
     CalendarioComponent,
-    TiendaComponent
+    TiendaComponent,
+    ProductosComponent,
+    FormUsuariosComponent,
+    FormProductoresComponent,
+    FormProductoComponent,
+    LoginComponent,
+    ProductorDetalleComponent
   ],
   imports: [
     BrowserModule,
