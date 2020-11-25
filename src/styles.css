@@ -1,5 +1,8 @@
 
 /* INICIO Header */
+header{
+    background-color: red;
+}
 header .logo{
     width: 35px;
     filter: invert(0.8);
@@ -12,9 +15,27 @@ header .navbar-nav .linea{
     height: 20px;
     margin-top: 12px;
     border-left: 1px solid white;
-    
-}
-header :active{
-    color: white;
 }
 /* FIN Header */
+/* INICIO Hero */
+.hero .jumbotron{
+    background-image: url("./assets/images/foto_hero.jpg");
+    background-size: cover;
+    height: 80vh;
+    opacity: 1;
+}
+.hero .lead{
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 50px;
+}
+.hero .p1{
+    font-size: 1.75em;
+}
+.hero .p2{
+    font-size: 1.25em;
+}
+.hero .btn{
+    font-size: 1.15em;
+}
+/* FIN Hero */
