@@ -14,5 +14,7 @@ header .navbar-nav .linea{
     border-left: 1px solid white;
     
 }
-
+header :active{
+    color: white;
+}
 /* FIN Header */
