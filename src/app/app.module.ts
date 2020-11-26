@@ -14,6 +14,8 @@ import { FormProductoresComponent } from './form-productores/form-productores.co
 import { FormProductoComponent } from './form-producto/form-producto.component';
 import { LoginComponent } from './login/login.component';
 import { ProductorDetalleComponent } from './productor-detalle/productor-detalle.component';
+import { Error404Component } from './error404/error404.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { ProductorDetalleComponent } from './productor-detalle/productor-detalle
     FormProductoresComponent,
     FormProductoComponent,
     LoginComponent,
-    ProductorDetalleComponent
+    ProductorDetalleComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,32 @@
-<h1>the header</h1>
+<!-- header -->
+<header class="bg-dark text-white container-fluid">
+    <!-- nav .container -->
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark container">
+        <a class="navbar-brand" href="./indice">
+            <img class="logo" src="./assets/images/logo.png" alt="">
+            <b>LOGO</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- text-center alineo menu centrado en movil -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- ml-auto margin left -->
+            <div class="navbar-nav ml-auto active">
+                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">MVV</a>
+                <a class="nav-link" href="#">Cerca de ti</a>
+                <a class="nav-link" href="/tienda">Productos</a>
+                <a class="nav-link" href="#">Eventos</a>
+                <a class="nav-link" href="#">Contacto</a>
+                <div class="linea"></div>
+                <a class="nav-link active" href="/login">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<h2>subtítulo</h2>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, vel?</p>
-<p>aaaaaaaaaaaaaaaa</p>
+<main>
+    <router-outlet></router-outlet>
+</main>
