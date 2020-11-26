@@ -39,3 +39,8 @@ header .navbar-nav .linea{
     font-size: 1.15em;
 }
 /* FIN Hero */
+/* You can add global styles to this file, and also import other style files */
+
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");

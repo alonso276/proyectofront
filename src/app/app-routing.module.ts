@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Error404Component } from './error404/error404.component';
@@ -8,8 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProductorDetalleComponent } from './productor-detalle/productor-detalle.component';
 import { TiendaComponent } from './tienda/tienda.component';
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> feature_l
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/inicio' },
   { path: 'inicio', component: HomeComponent },
@@ -21,7 +25,10 @@ const routes: Routes = [
   { path: 'form-productos', component: FormProductoComponent },
   { path: '**', component: Error404Component },
 ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> feature_l
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

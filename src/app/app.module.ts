@@ -15,7 +15,10 @@ import { FormProductoComponent } from './form-producto/form-producto.component';
 import { LoginComponent } from './login/login.component';
 import { ProductorDetalleComponent } from './productor-detalle/productor-detalle.component';
 import { Error404Component } from './error404/error404.component';
+<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
+=======
+>>>>>>> feature_l
 
 @NgModule({
   declarations: [
