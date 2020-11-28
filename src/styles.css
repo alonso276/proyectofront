@@ -3,8 +3,9 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
-/* INICIO Header */
+/* Inicio Header */
 header {
     position: fixed;
     z-index: 10;
@@ -22,41 +23,10 @@ header .navbar-nav .linea{
     margin-top: 12px;
     border-left: 1px solid white;
 }
-/* FIN Header */
-/* INICIO Hero */
-.hero{
+/* Fin Header */
+
+/* Inicio main */
+main{
     padding-top: 66px;
 }
-.hero .jumbotron{
-    /* background-image: url("./assets/images/foto_hero.jpg"); */
-    background-color: #00D0C6;
-    background-size: cover;
-    height: 570px;
-    opacity: 1;
-    margin-bottom: 0;
-}
-.hero .lead{
-    font-size: 2em;
-    font-weight: 700;
-    margin-top: 10%;
-}
-.hero .p1{
-    font-size: 1.75em;
-}
-.hero .p2{
-    font-size: 1.25em;
-}
-.hero .btn{
-    font-size: 1.15em;
-}
-/* FIN Hero */
-/* INICIO Tienda */
-.tienda{
-    padding-top: 66px;
-}
-/* .tienda .btn:hover{
-    background-color: #00D0C6;
-} */
-
-/* FIN Tienda */
-
+/* Fin main */

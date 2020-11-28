@@ -1,0 +1,24 @@
+/* Inicio Hero */
+.hero .jumbotron{
+    /* background-image: url("./assets/images/foto_hero.jpg"); */
+    background-color: #00D0C6;
+    background-size: cover;
+    height: 570px;
+    opacity: 1;
+    margin-bottom: 0;
+}
+.hero .lead{
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 10%;
+}
+.hero .p1{
+    font-size: 1.75em;
+}
+.hero .p2{
+    font-size: 1.25em;
+}
+.hero .btn{
+    font-size: 1.15em;
+}
+/* Fin Hero */

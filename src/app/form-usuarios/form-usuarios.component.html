@@ -1,1 +1,51 @@
-<p>form-usuarios works!</p>
+<body>
+    <div class="content">
+        <div class="text">Registro Usuario</div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-group field">
+                <span class="fas fa-user"></span>
+                <input type="text" class="form-control" formControlName="nombre">
+                <label>Nombre</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-user"></span>
+                <input type="text" class="form-control" formControlName="apellidos">
+                <label>Apellidos</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-at"></span>
+                <input type="email" class="form-control" formControlName="email">
+                <label>Email</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-lock"></span>
+                <input type="password" class="form-control" formControlName="contraseña">
+                <label>Contraseña</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-map-marker-alt"></span>
+                <input type="text" class="form-control" formControlName="direccion">
+                <label>Dirección</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-mobile-alt"></span>
+                <input type="tel" class="form-control" formControlName="telefono">
+                <label>Teléfono</label>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-sort-down"></span>
+                <select class="form-control custom-select custom-select-lg mb-3" formControlName="perfil">
+                    <option value="comprador">Comprador</option>
+                    <option value="productor">Productor</option>
+                    <option value="ambos">Ambos</option>
+                    <option value="nd">No definido</option>
+                </select>
+
+                <label>Perfil</label>
+            </div>
+
+            <input type="submit" value="Enviar" class="btn">
+
+        </form>
+    </div>
+</body>
