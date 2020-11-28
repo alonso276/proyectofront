@@ -2,29 +2,67 @@
     <div class="content">
         <div class="text">Registro Usuario</div>
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-            <div class="form-group field">
-                <span class="fas fa-user"></span>
-                <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-user"></span>
+                    <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">* El campo
+                    nombre es requerido</p>
             </div>
-            <div class="form-group field">
-                <span class="fas fa-user"></span>
-                <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-user"></span>
+                    <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">* El
+                    campo apellidos es requerido</p>
             </div>
-            <div class="form-group field">
-                <span class="fas fa-at"></span>
-                <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-at"></span>
+                    <input type="text" class="form-control" placeholder="Email"
+                        [class.is-invalid]="formulario.get('email').invalid && formulario.get('email').hasError('pattern')"
+                        formControlName="email">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
+                    * El campo email es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
+                    * El email debe tener un formato correcto</p>
             </div>
-            <div class="form-group field">
-                <span class="fas fa-lock"></span>
-                <input type="password" class="form-control" placeholder="Contraseña" formControlName="contraseña">
+
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-lock"></span>
+                    <input [type]="tipoPassword" class="form-control" placeholder="Contraseña"
+                        [class.is-invalid]="formulario.get('contraseña').invalid && formulario.get('contraseña').hasError('pattern')"
+                        formControlName="contraseña">
+                    <div class="ver-contraseña">
+                        <span class="fas fa-eye gris" (click)="onClick($event)"></span>
+                    </div>
+                </div>
+
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('contraseña').hasError('required') && formulario.get('contraseña').touched">
+                    * El campo contraseña es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
+                    * La contraseña debe tener entre 4 y 8 caracteres</p>
             </div>
+
             <div class="form-group field">
                 <span class="fas fa-map-marker-alt"></span>
                 <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion">
             </div>
-            <div class="form-group field">
-                <span class="fas fa-mobile-alt"></span>
-                <input type="tel" class="form-control" placeholder="Teléfono" formControlName="telefono">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-mobile-alt"></span>
+                    <input type="tel" class="form-control" placeholder="Teléfono" formControlName="telefono">
+                </div>
+                <p class="text-primary aviso" *ngIf="formulario.get('telefono').hasError('pattern')">
+                    * El número de teléfono debe tener 9 cifras</p>
             </div>
             <div class="form-group field">
                 <span class="fas fa-user-circle"></span>

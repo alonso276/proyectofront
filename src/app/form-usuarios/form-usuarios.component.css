@@ -28,6 +28,14 @@
     display: flex;
     position: relative;
   }
+  .content .aviso{
+    position: relative;
+    top: -10px;
+    color: #555555;
+    text-align: left;
+    margin-left: 35px;
+    margin-bottom: 0;
+  }
 
   .field input{
     height: 100%;
@@ -52,6 +60,10 @@
     width: 50px;
     line-height: 50px;
     color: #595959;
+  }
+  .field .ver-contraseña{
+    position: relative;
+    left: -50px;
   }
   .field label{
     position: absolute;
