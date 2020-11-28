@@ -26,9 +26,14 @@ export class FormUsuariosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChange() {
+
+  }
+
   //Provisional Prueba
   onSubmit() {
-    console.log(this.formulario);
+    console.log(this.formulario.value);
+    this.formulario.reset();
   }
 
 }

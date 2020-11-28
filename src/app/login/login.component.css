@@ -106,7 +106,7 @@ body{
   }
 
   button:focus{
-    color: #3498db;
+    color:  #0275d8;;
     box-shadow: inset 2px 2px 5px #babecc,
                 inset -5px -5px 10px #ffffff73;
   }

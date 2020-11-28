@@ -4,43 +4,37 @@
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div class="form-group field">
                 <span class="fas fa-user"></span>
-                <input type="text" class="form-control" formControlName="nombre">
-                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
             </div>
             <div class="form-group field">
                 <span class="fas fa-user"></span>
-                <input type="text" class="form-control" formControlName="apellidos">
-                <label>Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
             </div>
             <div class="form-group field">
                 <span class="fas fa-at"></span>
-                <input type="email" class="form-control" formControlName="email">
-                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" formControlName="email">
             </div>
             <div class="form-group field">
                 <span class="fas fa-lock"></span>
-                <input type="password" class="form-control" formControlName="contraseña">
-                <label>Contraseña</label>
+                <input type="password" class="form-control" placeholder="Contraseña" formControlName="contraseña">
             </div>
             <div class="form-group field">
                 <span class="fas fa-map-marker-alt"></span>
-                <input type="text" class="form-control" formControlName="direccion">
-                <label>Dirección</label>
+                <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion">
             </div>
             <div class="form-group field">
                 <span class="fas fa-mobile-alt"></span>
-                <input type="tel" class="form-control" formControlName="telefono">
-                <label>Teléfono</label>
+                <input type="tel" class="form-control" placeholder="Teléfono" formControlName="telefono">
             </div>
             <div class="form-group field">
-                <span class="fas fa-sort-down"></span>
-                <select class="form-control custom-select custom-select-lg mb-3" formControlName="perfil">
+                <span class="fas fa-user-circle"></span>
+                <select class="form-control custom-select mb-3" formControlName="perfil">
+                    <option disabled selected value="">Perfil:</option>
                     <option value="comprador">Comprador</option>
                     <option value="productor">Productor</option>
                     <option value="ambos">Ambos</option>
                     <option value="nd">No definido</option>
                 </select>
-
                 <label>Perfil</label>
             </div>
 
