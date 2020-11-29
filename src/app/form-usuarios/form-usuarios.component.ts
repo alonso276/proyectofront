@@ -12,6 +12,7 @@ export class FormUsuariosComponent implements OnInit {
   formulario: FormGroup;
   //para ver contrasena
   tipoPassword: string;
+
   //inyecto en constructor
   constructor() {
 
@@ -30,14 +31,16 @@ export class FormUsuariosComponent implements OnInit {
       ]),
       contraseña: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^(?=.*\d).{4,8}$/)
+        Validators.pattern(/^[A-Za-z0-9]{4,8}$/)
+        //Validators.pattern(/^(?=.*\d).{4,8}$/) //Entre 4 y 8 digitos
       ]),
       direccion: new FormControl(),
       telefono: new FormControl('', [
         Validators.pattern(/^\d.{8,8}$/)
       ]),
       perfil: new FormControl(),
-    })
+    });
+
   }
 
   ngOnInit(): void {
