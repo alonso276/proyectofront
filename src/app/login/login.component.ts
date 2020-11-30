@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       contraseña: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[A-Za-z0-9]{4,8}$/)
-        //Validators.pattern(/^(?=.*\d).{4,8}$/) //Entre 4 y 8 digitos
+        //Validators.pattern(/^(?=.*\d).{4,8}$/) //Entre 4 y 8 (solo) digitos
       ])
 
     });

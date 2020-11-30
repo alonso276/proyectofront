@@ -32,13 +32,13 @@ export class FormUsuariosComponent implements OnInit {
       contraseña: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[A-Za-z0-9]{4,8}$/)
-        //Validators.pattern(/^(?=.*\d).{4,8}$/) //Entre 4 y 8 digitos
+        //Validators.pattern(/^(?=.*\d).{4,8}$/) //Entre 4 y 8 (solo) digitos
       ]),
-      direccion: new FormControl(),
+      direccion: new FormControl(''),
       telefono: new FormControl('', [
         Validators.pattern(/^\d.{8,8}$/)
       ]),
-      perfil: new FormControl(),
+      perfil: new FormControl(''),
     });
 
   }
@@ -46,7 +46,7 @@ export class FormUsuariosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //ver contrasena
+  //ver contraseña
   onClick($event) {
     $event.preventDefault();
     if (this.tipoPassword === 'text') {
@@ -57,7 +57,7 @@ export class FormUsuariosComponent implements OnInit {
     //equivale: this.tipoPassword = (this.tipoPassword == 'text') ? 'password' : 'text';
   }
 
-  //Provisional Prueba
+  //Provisional (Prueba)
   onSubmit() {
     console.log(this.formulario.value);
     this.formulario.reset();

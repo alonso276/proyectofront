@@ -1,7 +1,14 @@
 /* Inicio Tienda */
 
-/* .tienda .btn:hover{
-    background-color: #00D0C6;
-} */
+.tienda .btn:hover{
+    background-color: #007bff;
+}
+
+.tienda .arrow-top{
+    /* color: #8a8a8a; */
+    color: #007bff;
+    font-size: 1.70em;
+    margin: 8px 0;
+}
 
 /* Fin Tienda */

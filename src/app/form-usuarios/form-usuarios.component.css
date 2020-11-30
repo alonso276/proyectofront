@@ -94,6 +94,11 @@
     background-color:#ebf0fb; 
   }
 
+  .custom-control-label a{
+    color: #595959;
+ 
+  }
+
   .btn{
     margin: 15px 0;
     width: 100%;

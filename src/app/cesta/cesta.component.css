@@ -1,0 +1,35 @@
+/* Inicio cesta */
+
+.cesta .mi-cesta{
+    background-color: #007bff;
+    font-weight: bold;
+}
+.cesta .mi-cesta:hover{
+    background-color: #035bb9;
+}
+.cesta .modal-title{
+    color: #007bff;
+    margin-left: 20px; 
+    font-weight: bold; 
+}
+.cesta .modal-header{
+    background-color: lightgray;
+}
+.cesta .productos img{
+    height: 40px;
+    width: 60px;
+    margin-right: 15px;
+}
+.cesta ul{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+.cesta ul h3{
+    color: #007bff;
+}
+/* .cesta{
+     display: none; 
+     visibility: hidden; 
+} */
+
+/* Fin cesta */

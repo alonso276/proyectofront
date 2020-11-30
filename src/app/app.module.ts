@@ -17,6 +17,7 @@ import { ProductorDetalleComponent } from './productor-detalle/productor-detalle
 import { Error404Component } from './error404/error404.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CestaComponent } from './cesta/cesta.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormProductoComponent,
     LoginComponent,
     ProductorDetalleComponent,
-    Error404Component
+    Error404Component,
+    CestaComponent
   ],
   imports: [
     BrowserModule,
