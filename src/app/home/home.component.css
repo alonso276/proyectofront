@@ -1,3 +1,49 @@
+/* Inicio Hero */
+.hero .jumbotron{
+    /* background-image: url("./assets/images/foto_hero.jpg"); */
+    /* background-color: #00D0C6; */
+    background-color: #00bc9b;
+    background-size: cover;
+    height: 585px;
+    opacity: 1;
+    margin-bottom: 0;
+}
+.hero .lead{
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 10%;
+}
+.hero .slogan{
+    margin-top: 20vh;
+    margin-bottom: 15px;
+}
+.hero .sciente{
+    position: relative;
+    top: -8px;
+}
+.hero .ecta{
+    position: relative;
+    top: -16px;
+}
+.hero .p1{
+    font-size: 1.75em;
+}
+.hero .p2{
+    font-size: 1.25em;
+}
+.hero .btn{
+    font-size: 1.15em;
+}
+
+@media(max-width: 48.000em){
+    .hero{
+      height: 60vh;
+    }
+    .hero .p2{
+        display: none;
+    }
+  }
+/* Fin Hero */
 /**Inicio mvv**/
 
 .logomvv img{

@@ -1,0 +1,66 @@
+/* Inicio cesta */
+
+.cesta .mi-cesta{
+    background-color: #007bff;
+    font-weight: bold;
+}
+.cesta .mi-cesta:hover{
+    background-color: #035bb9;
+}  
+.cesta .modal-title{
+    /* color: #007bff; */
+    color: white;
+    margin-left: 20px; 
+    font-weight: bold; 
+}
+.cesta .nombre-usuario{
+    font-size: 1.1em;
+}
+.cesta span.fas{
+    /* color: #007bff; */
+    color: white;
+    transform: scale(1.3);
+}
+.cesta .modal-header{
+    /* background-color: lightgray; */
+    background-color: #00bc9b;
+
+}
+.cesta .productos img{
+    height: 40px;
+    width: 60px;
+    margin-right: 15px;
+}
+.cesta ul{
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+.cesta ul h3{
+    color: #007bff;
+}
+.cesta i.equis{
+    color: red;
+    margin-top: 6px;
+}
+.cesta div.iva{
+    color: gray;
+}
+.cesta div.total{
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.cesta button.comprar{
+    background-color: #00bc9b;
+    border-color: #00bc9b;
+    font-weight: bold;
+}
+.cesta button.comprar:hover{
+    background-color: #02866e;
+    border-color: #02866e;
+}
+/* .cesta{
+     display: none; 
+     visibility: hidden; 
+} */
+
+/* Fin cesta */

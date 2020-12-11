@@ -1,7 +1,6 @@
 <body>
     <div class="content">
         <div class="text">Registro Usuario</div>
-        
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
             <div>
                 <div class="form-group field">
@@ -18,7 +17,8 @@
                     <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
                 </div>
                 <p class="text-primary aviso"
-                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">* Los apellidos son requeridos</p>
+                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">*
+                    Los apellidos son requeridos</p>
             </div>
             <div>
                 <div class="form-group field">
@@ -64,17 +64,23 @@
             </div>
             <div class="form-group field">
                 <span class="fas fa-user-circle"></span>
-                <select class="form-control custom-select mb-3" formControlName="perfil">
-                    <option disabled selected value="">Perfil:</option>
+                <!-- <label>Perfil</label> -->
+                <select class="form-control custom-select custom-select-lg mb-3" formControlName="perfil">
+                    <option value="" disabled>Perfil:</option>
                     <option value="comprador">Comprador</option>
                     <option value="productor">Productor</option>
                     <option value="ambos">Ambos</option>
                     <option value="nd">No definido</option>
                 </select>
-                <label>Perfil</label>
+            </div>
+            <div class="custom-control custom-checkbox text-left ml-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1"> <a href="#">Acepto
+                        terminos y condiciones</a></label>
             </div>
             <!-- boton enviar desabilitado hasta completar todos los campos correctamente según validadores -->
             <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
+
         </form>
     </div>
 </body>

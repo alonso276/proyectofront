@@ -1,0 +1,138 @@
+<div class="cesta">
+    <!-- Button trigger modal de bootstrap -->
+    <button type="button" class="btn btn-primary mi-cesta" data-toggle="modal" data-target="#exampleModal">
+        Mi Cesta
+    </button>
+
+    <!-- PRUEBA Button tooltip de angular materials -->
+    <button mat-raised-button matTooltip="Me lleva a Mi Cesta" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModal">
+        Tolltip
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="fas fa-shopping-basket pt-3 pl-2"></span>
+                    <h3 class="modal-title mt-1 ml-3" id="exampleModalLabel">Mi Cesta</h3>
+                    <p class="ml-3 mt-3 nombre-usuario">Nombre Usuario</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <div class="productos">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-1 mt-1"><img class="card-img-top d-inline"
+                                            src="../assets/images/tomates_1.jpg" alt=""></div>
+                                    <div class="col-md-auto ml-2">
+                                        <p class="d-inline mb-0">Producto Nombre - Cantidad
+                                            (Kg/gr/l/ud) - Certificado</p>
+                                        <p class="mb-0">1 Unidad</p>
+                                    </div>
+                                    <div class="col-md-2 text-right">+ 1 -</div>
+                                    <i class="fas fa-times equis"></i>
+                                    <div class="col-md-2 text-right pr-1">Precio €</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-1 mt-1"><img class="card-img-top d-inline"
+                                            src="../assets/images/queso_1.jpg" alt=""></div>
+                                    <div class="col-md-auto ml-2">
+                                        <p class="d-inline mb-0">Producto Nombre - Cantidad
+                                            (Kg/gr/l/ud) - Certificado</p>
+                                        <p class="mb-0">1 Unidad</p>
+                                    </div>
+                                    <div class="col-md-2 text-right">+ 1 -</div>
+                                    <div class="col-md-2 text-right pr-1">Precio €</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-1 mt-1"><img class="card-img-top d-inline"
+                                            src="../assets/images/miel_1.jpg" alt=""></div>
+                                    <div class="col-md-auto ml-2">
+                                        <p class="d-inline mb-0">Producto Nombre - Cantidad
+                                            (Kg/gr/l/ud) - Certificado</p>
+                                        <p class="mb-0">1 Unidad</p>
+                                    </div>
+                                    <div class="col-md-2 text-right">+ 1 -</div>
+                                    <div class="col-md-2 text-right pr-1">Precio €</div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-1 mt-1"><img class="card-img-top d-inline"
+                                            src="../assets/images/cerveza_1.jpg" alt=""></div>
+                                    <div class="col-md-auto ml-2">
+                                        <p class="d-inline mb-0">Producto Nombre - Cantidad
+                                            (Kg/gr/l/ud) - Certificado</p>
+                                        <p class="mb-0">1 Unidad</p>
+                                    </div>
+                                    <div class="col-md-2 text-right">+ 1 -</div>
+                                    <div class="col-md-2 text-right pr-1">Precio €</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-body pt-0">
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item border-bottom-0 pb-0">
+                            <div class="row justify-content-end">
+                                <div class="col-md-auto col">Subtotal</div>
+                                <div class="col-md-2 col text-right">xxx,xx €</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row justify-content-end">
+                                <div class="col-md-auto col">IVA (4%)</div>
+                                <div class="col-md-2 col text-right iva">xxx,xx €</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row justify-content-end total">
+                                <div class="col-md-auto col"><b>Total:</b></div>
+                                <div class="col-md-2 col text-right">xxx,xx €</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                    <button type="button" class="btn btn-primary mr-3 comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BOTON +1- -->
+<!-- <div class="input-group">
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+            -
+        </button>
+    </span>
+    <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="100">
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+            +
+        </button>
+    </span>
+</div> -->
+
+<!-- PRUEBA getAll PRODUCTOS -->
+<p class="mb-1 mt-3"><b>LISTA de Prueba getAll Productos:</b></p>
+<ul *ngFor="let producto of productos">
+    <li>{{producto.nombre}}</li>
+    <li>{{producto.categoria}}</li>
+    <li>{{producto.precio}} €</li>
+</ul>

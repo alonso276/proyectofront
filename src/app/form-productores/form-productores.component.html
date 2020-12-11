@@ -1,97 +1,91 @@
 <body>
     <div class="content">
         <div class="text">Registro Productores</div>
+        <!-- Para formularios con input (type="file") => enctype="multipart/form-data" -->
         <form [formGroup]="formulario" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-
-          
             <div class="form-group field">
                 <span class="fas fa-user"></span>
-                <input type="text" class="form-control" placeholder="Nombre de empresa" formControlName="nombre_empresa">
+                <input type="text" class="form-control" placeholder="Nombre de empresa"
+                    formControlName="nombre_empresa">
             </div>
             <p class="text-primary aviso"
-                    *ngIf="formulario.get('nombre_empresa').hasError('required') && formulario.get('nombre_empresa').touched">* El
-                    nombre empresa es requerido</p>
-
-
+                *ngIf="formulario.get('nombre_empresa').hasError('required') && formulario.get('nombre_empresa').touched">
+                * El nombre empresa es requerido</p>
             <div class="form-group field">
                 <span class="fas fa-map-pin"></span>
-                <input type="text" class="form-control" placeholder="Dir. de producción incl. C.P." formControlName="direccion_produccion">
-                
+                <input type="text" class="form-control" placeholder="Dir. de producción incl. C.P."
+                    formControlName="direccion_produccion">
             </div>
             <p class="text-primary aviso"
-            *ngIf="formulario.get('direccion_produccion').hasError('required') && formulario.get('direccion_produccion').touched">* La dirección de producción es requerida</p>
-           
+                *ngIf="formulario.get('direccion_produccion').hasError('required') && formulario.get('direccion_produccion').touched">
+                * La dirección de producción es requerida</p>
             <div class="form-group field">
                 <span class="fas fa-city"></span>
-                <input type="text" class="form-control" 
-                placeholder="comarca" formControlName="comarca">
+                <input type="text" class="form-control" placeholder="comarca" formControlName="comarca">
             </div>
             <p class="text-primary aviso"
-                *ngIf="formulario.get('comarca').hasError('required') && formulario.get('comarca').touched">*La comarca es requerida</p>
+                *ngIf="formulario.get('comarca').hasError('required') && formulario.get('comarca').touched">* La
+                comarca es requerida</p>
             <div class="form-group field">
                 <span class="fas fa-city"></span>
-                <input type="text" class="form-control" 
-                placeholder="municipio" formControlName="municipio">
+                <input type="text" class="form-control" placeholder="municipio" formControlName="municipio">
             </div>
             <p class="text-primary aviso"
-                *ngIf="formulario.get('municipio').hasError('required') && formulario.get('municipio').touched">* El municipio es requerido</p>
+                *ngIf="formulario.get('municipio').hasError('required') && formulario.get('municipio').touched">* El
+                municipio es requerido</p>
             <div class="form-group field">
                 <span class="fas fa-city"></span>
                 <input type="text" class="form-control" placeholder="Provincia" formControlName="provincia">
             </div>
             <p class="text-primary aviso"
-                *ngIf="formulario.get('provincia').hasError('required') && formulario.get('provincia').touched">* La provincia es requerida</p>
-
+                *ngIf="formulario.get('provincia').hasError('required') && formulario.get('provincia').touched">* La
+                provincia es requerida</p>
             <div class="form-group field">
                 <span class="fas fa-map-marker-alt"></span>
                 <input type="text" class="form-control" placeholder="actividad" formControlName="actividad">
             </div>
             <p class="text-primary aviso"
-                *ngIf="formulario.get('actividad').hasError('required') && formulario.get('actividad').touched">* La actividad es requerida</p>
-            
-                <div>
-                    <div class="form-group field">
-                        <span class="fas fa-at"></span>
-                    
-                        <input type="email" class="form-control" placeholder="Email de empresa"
-                            [class.is-invalid]="formulario.get('email_empresa').invalid && formulario.get('email_empresa').hasError('pattern')"
-                            formControlName="email_empresa">
-                    </div>
-                    <p class="text-primary aviso"
-                        *ngIf="formulario.get('email_empresa').hasError('required') && formulario.get('email_empresa').touched">
-                        * El email es requerido</p>
-                    <p class="text-primary aviso" *ngIf="formulario.get('email_empresa').hasError('pattern')">
-                        * El email debe tener un formato correcto</p>
+                *ngIf="formulario.get('actividad').hasError('required') && formulario.get('actividad').touched">* La
+                actividad es requerida</p>
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-at"></span>
+                    <input type="email" class="form-control" placeholder="Email de empresa"
+                        [class.is-invalid]="formulario.get('email_empresa').invalid && formulario.get('email_empresa').hasError('pattern')"
+                        formControlName="email_empresa">
                 </div>
-
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('email_empresa').hasError('required') && formulario.get('email_empresa').touched">
+                    * El email es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('email_empresa').hasError('pattern')">
+                    * El email debe tener un formato correcto</p>
+            </div>
             <div class="form-group field">
                 <span class="fas fa-mobile-alt"></span>
-                <input type="tel" class="form-control" placeholder="Teléfono de empresa" formControlName="telefono_empresa"> 
+                <input type="tel" class="form-control" placeholder="Teléfono de empresa"
+                    formControlName="telefono_empresa">
             </div>
             <p class="text-primary aviso"
-            *ngIf="formulario.get('telefono_empresa').hasError('required') && formulario.get('telefono_empresa').touched">*El teléfono es requerido</p>
-
+                *ngIf="formulario.get('telefono_empresa').hasError('required') && formulario.get('telefono_empresa').touched">
+                * El teléfono es requerido</p>
             <p class="text-primary aviso" *ngIf="formulario.get('telefono_empresa').hasError('pattern')">
                 * El número de teléfono debe tener 9 dígitos</p>
-               
-           
             <div class="form-group field">
                 <span class="fas fa-images"></span>
                 <input type="file" class="form-control" placeholder="Adjunta tu imagen" formControlName="imagen">
             </div>
             <p class="text-primary aviso"
-            *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">*La imagen es requerida</p>
-
+                *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">
+                * La imagen es requerida</p>
             <div class="form-group field">
                 <span class="fas fa-comment"></span>
-                <input type="textarea" class="form-control" placeholder="Introduce tus comentarios" formControlName="comentario">
-              
+                <input type="textarea" class="form-control" placeholder="Introduce tus comentarios"
+                    formControlName="comentario">
             </div>
             <p class="text-primary aviso"
-            *ngIf="formulario.get('comentario').hasError('required') && formulario.get('comentario').touched">*El comentario es requerido</p>
-            
+                *ngIf="formulario.get('comentario').hasError('required') && formulario.get('comentario').touched">
+                * El comentario es requerido</p>
             <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
         </form>
     </div>
 </body>
-

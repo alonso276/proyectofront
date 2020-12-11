@@ -7,10 +7,13 @@ import { ProductosService } from '../services/productos.service';
   styleUrls: ['./filtro.component.css']
 })
 export class FiltroComponent implements OnInit {
+
   comarcas: any[];
   categorias: any[];
   arrProductores: Productor[];
+
   constructor(private productoresService: ProductoresService, private productosService: ProductosService) { }
+
   ngOnInit(): void {
     this.productoresService.getComarca()
       .then(response => this.comarcas = response)
@@ -20,4 +23,6 @@ export class FiltroComponent implements OnInit {
       .then(response => this.categorias = response)
       .catch(error => console.log(error));
   }
+
 }
+

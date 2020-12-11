@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
+//import * as $ from 'jquery';
 
 
 @Component({
@@ -8,7 +9,8 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
 
-  
+  ngOnInit() {
+    //console.log($);
+  }
 
-  title = 'front';
 }
