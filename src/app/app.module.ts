@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './carousel/carousel.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     FormProductoresComponent,
     FormProductoComponent,
     LoginComponent,
+    MapaComponent,
     ProductorDetalleComponent,
     Error404Component,
     CestaComponent,
