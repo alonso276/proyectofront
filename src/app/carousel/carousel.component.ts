@@ -10,37 +10,37 @@ import { Producto, ProductosService } from '../services/productos.service';
 })
 export class CarouselComponent implements OnInit {
 
-  productores: Productor[];
+  productores:Productor[];
   productos: Producto[];
   productoresCat: Productor[];
+  
+  comarcas:any[];
+  comarcasSinRepetir:any[];
 
-  comarcas: any[];
-  comarcasSinRepetir: any[];
-
-  categorias: any[]
-  categoriasSinRepetir: any[];
-
+  categorias:any[]
+  categoriasSinRepetir:any[];
+  
 
   constructor(
-    private productoresService: ProductoresService,
-    private productosService: ProductosService
-  ) {
-    this.comarcas = [];
-    this.categorias = [];
+     private productoresService:ProductoresService,
+     private productosService:ProductosService
+  ) { 
+    this.comarcas=[];
+    this.categorias=[];
   }
 
   ngOnInit(): void {
 
+    
+      this.productoresService.getAll()
+        .then(response => {
+          this.productores = response;
+        })
+        .catch(error => console.log(error));
+        
 
-    this.productoresService.getAll()
-      .then(response => {
-        this.productores = response;
-      })
-      .catch(error => console.log(error));
 
-
-
-    this.productoresService.getComarca()
+      this.productoresService.getComarca()
       .then(response => {
         this.comarcas = response;
         this.comarcas = this.comarcas.map(item => item.comarca)
@@ -51,79 +51,81 @@ export class CarouselComponent implements OnInit {
       .catch(error => console.log(error));
 
 
-    // Método de producto--to delete in near future
-    this.productosService.getAll()
-      .then(response => {
-        this.productos = response;
-      })
-      .catch(error => console.log(error));
+      // Método de producto--to delete in near future
+        this.productosService.getAll()
+        .then(response => {
+          this.productos = response;
+        })
+        .catch(error => console.log(error));
+        
+
+                //métodos de productos--getcategory()
+        this.productosService.getCategory()
+        .then(response => {
+          this.categorias = response;
+          this.categorias = this.categorias.map(item => item.categoria)
+          const data = new Set(this.categorias);
+          this.categoriasSinRepetir = [...data];
+          console.log(this.categoriasSinRepetir);
+        })
+        .catch(error => console.log(error));
+
+        //fin to delete in near future
+        
+       
 
 
-    //métodos de productos--getcategory()
-    this.productosService.getCategory()
-      .then(response => {
-        this.categorias = response;
-        this.categorias = this.categorias.map(item => item.categoria)
-        const data = new Set(this.categorias);
-        this.categoriasSinRepetir = [...data];
-        console.log(this.categoriasSinRepetir);
-      })
-      .catch(error => console.log(error));
-
-    //fin to delete in near future
-
-
-
-
-  }
-
-  async onChange($event) {
-    if ($event.target.value === 'todas') {
-      this.productores = await this.productoresService.getAll();
-    } else {
-      this.productores = await this.productoresService.getByComarca($event.target.value);
     }
-    //console.log(this.arrProductos);
-    //console.log($event.target.value);
-  }
 
-
-
-  async onChangeCat($event) {
-    if ($event.target.value === 'todos') {
-      this.productoresCat = await this.productoresService.getAll();
-    } else {
-      this.productoresCat = await this.productoresService.getByCategory($event.target.value);
+    async onChange($event) {
+      if ($event.target.value === 'todas') {
+        this.productores = await this.productoresService.getAll();
+      } else {
+        this.productores = await this.productoresService.getByComarca($event.target.value);
+      }
+      //console.log(this.arrProductos);
+      //console.log($event.target.value);
     }
-    //console.log(this.arrProductos);
-    //console.log($event.target.value);
-  }
 
 
 
-  async onChangeCatProd($event) {
-    if ($event.target.value === 'todos') {
-      this.productos = await this.productosService.getAll();
+    async onChangeCat($event) {
+      if ($event.target.value === 'todos') {
+        this.productoresCat = await this.productoresService.getAll();
+      } else {
+        this.productoresCat = await this.productoresService.getByCategory($event.target.value);
+      }
+      //console.log(this.arrProductos);
+      //console.log($event.target.value);
+    }
+
+
+
+    async onChangeCatProd($event) {
+      if ($event.target.value === 'todos') {
+       this.productos = await this.productosService.getAll();
     } else {
       this.productos = await this.productosService.getByCategory($event.target.value);
+      }
     }
+
+
+     async onClickProductorId(pProductorId: number){
+
+      this.productos = await this.productosService.getByProductorId(pProductorId);
+      console.log(this.productos)
+
+  
+     }
+
+
+     async onClickProductComarca(pComarca:string){
+
+      this.productos = await this.productosService.getByProductComarca(pComarca)
+      
+     }
   }
 
 
-  async onClickProductorId(pProductorId: number) {
-
-    this.productos = await this.productosService.getByProductorId(pProductorId);
-    console.log(this.productos)
-
-
-  }
-
-
-  async onClickProductComarca(pComarca: string) {
-
-    this.productos = await this.productosService.getByProductComarca(pComarca)
-
-  }
-}
 
 
