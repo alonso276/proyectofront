@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatButtonModule } from '@angular/material/button';
+// import { MatTooltipModule } from '@angular/material/tooltip';
+// import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
+import {MapaComponent} from './mapa/mapa.component'
 import { FiltroComponent } from './filtro/filtro.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { TiendaComponent } from './tienda/tienda.component';
@@ -37,6 +37,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     FormProductoresComponent,
     FormProductoComponent,
     LoginComponent,
+    MapaComponent,
     ProductorDetalleComponent,
     Error404Component,
     CestaComponent,
@@ -49,8 +50,8 @@ import { CarouselComponent } from './carousel/carousel.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTooltipModule,
-    MatButtonModule,
+    // MatTooltipModule,
+    // MatButtonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
     })

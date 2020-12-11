@@ -1,5 +1,9 @@
+*{
+	color:black;
+}
 body {
 	font-family: "Open Sans", sans-serif;
+	
 }
 h2 {
 	color: #000;
@@ -143,29 +147,3 @@ h2::after {
 	font-size: 14px;
 	color: #ffc000;
 }
-
-/*filtro de filtrar por categorias round pretty filters*/
-
-* Inicio Filtro */
-.filtro{
-    border-right: 1px solid gray;
-}
-.filtro .img-autor{
-    height: 30px;
-}
-.filtro ul{
-    list-style-type:none;
-    }
-.filtro a:link, a:visited, a:active {
-        text-decoration:none;
-        color: black;
-    }
-.filtro select{  
-    width: 95%;  
-    font-size: 16px;
-    outline: none;
-    color: #595959;
-    border-radius: 25px;
-    border: 1px solid lightgray;
-  }
-/* Fin filtro */
