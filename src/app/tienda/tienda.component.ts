@@ -99,5 +99,4 @@ export class TiendaComponent implements OnInit {
     this.productos = await this.productosService.getByProductComarca(pComarca);
     //console.log(this.productos);
   }
-
 }

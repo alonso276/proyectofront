@@ -12,7 +12,6 @@
         text-decoration:none;
         color: black;
     }
-
 .filtro select{  
     width: 95%;  
     font-size: 16px;
@@ -21,5 +20,4 @@
     border-radius: 25px;
     border: 1px solid lightgray;
   }
-
 /* Fin filtro */

@@ -36,7 +36,6 @@
     margin-left: 35px;
     margin-bottom: 0;
   }
-
   .field input{
     height: 100%;
     width: 100%;
@@ -75,7 +74,6 @@
     color: #666666;
     transform: translateY(-50%);
   }
-
   select{
     height: 100%;
     width: 100%;

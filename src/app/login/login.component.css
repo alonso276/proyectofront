@@ -37,7 +37,6 @@ body{
   margin-left: 35px;
   margin-bottom: 0;
 }
-
 .field input{
   height: 100%;
   width: 100%;
@@ -61,7 +60,6 @@ body{
   position: relative;
   left: -50px;
 }
-
 .btn{
   margin: 15px 0;
   width: 100%;
@@ -85,7 +83,6 @@ body{
 .btn:disabled{
   color: #666666;
 }
-
 @media(max-width: 48.000em){
   .content{
     width: 90vw;

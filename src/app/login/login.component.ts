@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   //creo formulario
   formulario: FormGroup;
   //para ver contrasena
@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
     }
     //equivale: this.tipoPassword = (this.tipoPassword == 'text') ? 'password' : 'text';
   }
-
   //Provisional Prueba
   onSubmit() {
     console.log(this.formulario.value);

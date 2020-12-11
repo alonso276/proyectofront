@@ -34,7 +34,6 @@
                 <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
                     * El email debe tener un formato correcto</p>
             </div>
-
             <div>
                 <!-- Alternativa: class.is-invalid -> muestra alerta roja a la derecha del campo. En este caso se solapa con el icono ojo para ver password -->
                 <div class="form-group field">
@@ -45,14 +44,12 @@
                         <span class="fas fa-eye gris" (click)="onClick($event)"></span>
                     </div>
                 </div>
-
                 <p class="text-primary aviso"
                     *ngIf="formulario.get('contraseña').hasError('required') && formulario.get('contraseña').touched">
                     * El password es requerido</p>
                 <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
                     * El password debe tener entre 4 y 8 caracteres</p>
             </div>
-
             <div class="form-group field">
                 <span class="fas fa-map-marker-alt"></span>
                 <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion">
