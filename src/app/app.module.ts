@@ -15,10 +15,11 @@ import { FormProductoComponent } from './form-producto/form-producto.component';
 import { LoginComponent } from './login/login.component';
 import { ProductorDetalleComponent } from './productor-detalle/productor-detalle.component';
 import { Error404Component } from './error404/error404.component';
-<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
-=======
->>>>>>> feature_l
+import { ReactiveFormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +35,18 @@ import { RouterModule } from '@angular/router';
     FormProductoComponent,
     LoginComponent,
     ProductorDetalleComponent,
-    Error404Component
+    Error404Component,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

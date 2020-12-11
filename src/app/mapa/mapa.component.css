@@ -1,5 +1,36 @@
-.mapa{
 
-    width:800px;
-    height:800px;
+agm-map{
+
+    width:370px;
+    height:370px;
+    margin:10px;
 }
+
+.buscar{
+   width:300px;
+
+}
+.busqueda{
+   margin-top:10px;
+}
+
+
+/* inicio productores */
+
+.card-group .card{
+    background-color:#00D0C6;
+    border:2px solid black;
+    max-height:600px;
+    margin-top:40px;
+    margin-bottom:20px;
+    
+     
+ }
+ .card-group .card-title{
+    text-align:center;
+ }
+ 
+
+
+ /** FIN card productores**/
+ 

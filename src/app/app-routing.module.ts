@@ -16,9 +16,9 @@ const routes: Routes = [
   { path: 'tienda', component: TiendaComponent },
   { path: 'productores', component: ProductorDetalleComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'form-usuarios', component: FormUsuariosComponent },
-  { path: 'form-productores', component: FormProductoresComponent },
-  { path: 'form-productos', component: FormProductoComponent },
+  { path: 'registro', component: FormUsuariosComponent },
+  { path: 'productores/nuevo', component: FormProductoresComponent },
+  { path: 'productos/nuevo', component: FormProductoComponent },
   { path: '**', component: Error404Component },
 ];
 

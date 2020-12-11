@@ -1,1 +1,42 @@
-<p>login works!</p>
+<body>
+    <div class="content">
+        <div class="text">Login</div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-at"></span>
+                    <!-- class.is-invalid -> muestra alerta roja a la derecha del campo -->
+                    <input type="text" class="form-control" placeholder="Email"
+                        [class.is-invalid]="formulario.get('email').invalid && formulario.get('email').hasError('pattern')"
+                        formControlName="email">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
+                    * El email es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
+                    * El email debe tener un formato correcto</p>
+            </div>
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-lock"></span>
+                    <input [type]="tipoPassword" class="form-control" placeholder="Password"
+                        formControlName="contraseña">
+                    <div class="ver-contraseña">
+                        <span class="fas fa-eye gris" (click)="onClick($event)"></span>
+                    </div>
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('contraseña').hasError('required') && formulario.get('contraseña').touched">
+                    * El password es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
+                    * El password debe tener entre 4 y 8 caracteres</p>
+            </div>
+            <div class="forgot-pass"><a href="#">Olvidaste tu Password?</a></div>
+            <!-- boton enviar desabilitado hasta completar todos los campos correctamente según validadores -->
+            <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
+            <div class="signup">Aún no eres miembro?
+                <a href="#" title="Ir a Registro">Registrarme</a>
+            </div>
+        </form>
+    </div>
+</body>

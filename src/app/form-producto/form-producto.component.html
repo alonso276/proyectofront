@@ -1,1 +1,73 @@
-<p>form-producto works!</p>
+<body>
+    <div class="content">
+        <div class="text">Registro Producto</div>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+            <div class="form-group field">
+                <span class="fas fa-sort-down"></span>
+                <select class="form-control custom-select custom-select-lg mb-3" formControlName="categoria" >
+                    <option disabled selected value="">Categoría:</option>
+                    <option value="frutas">Frutas</option>
+                    <option value="verduras">Verduras</option>
+                    <option value="lacteos">Lacteos</option>
+                    <option value="cereales">Cereales</option>
+                    <option value="bebidas">Bebida</option>
+                    <option value="despensa">Despensa</option>
+                    <option value="otros">Otros</option>
+                    <label> Categoría</label>
+                </select>
+            </div>
+            <p class="text-primary aviso"
+            *ngIf="formulario.get('categoria').hasError('required') && formulario.get('categoria').touched">*La categoría es requerida</p> 
+
+            <div class="form-group field">
+                <span class="fas fa-user"></span>
+                <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+            </div>
+            <p class="text-primary aviso"
+            *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">*El nombre es requerido</p> 
+
+
+            <div class="form-group field">
+                <span class="fas fa-at"></span>
+                <input type="text" class="form-control" placeholder="Cantidad (kilos,litros o unidades)" formControlName="cantidad">
+                
+            </div>
+            <p class="text-primary aviso"
+                *ngIf="formulario.get('cantidad').hasError('required') && formulario.get('cantidad').touched">*La cantidad es requerida</p> 
+            <div class="form-group field">
+                <span class="fas fa-euro-sign"></span>
+                <input type="text" class="form-control" 
+                placeholder="Precio en euros" formControlName="precio">
+            </div>
+                <p class="text-primary aviso"
+                *ngIf="formulario.get('precio').hasError('required') && formulario.get('precio').touched">*El precio es requerido</p> 
+                
+            
+            <div class="form-group field">
+                <span class="fas fa-stamp"></span>
+                <select class="form-control custom-select custom-select-lg mb-3" formControlName="certificado">
+                    <option disabled selected value="">Certificado:</option>
+                    <option value="bio">Bio</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="eco">Eco</option>
+                    <option value="nd">No tiene</option>
+                </select>
+                <!-- <label>Certificado</label> -->
+            </div>
+            <p class="text-primary aviso"
+            *ngIf="formulario.get('certificado').hasError('required') && formulario.get('certificado').touched">*El certificado es requerido</p> 
+        
+            <div class="form-group field">
+                <span class="fas fa-images"></span>
+                <input type="text" class="form-control" placeholder="Adjunta tu imagen" formControlName="imagen" >
+            </div>
+            <p class="text-primary aviso"
+            *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">*La imagen es requerida</p> 
+            
+            <input type="submit" value="Enviar" class="btn">
+            <!--[disabled]="!formulario.valid"-->
+        </form>
+    </div>
+</body>
+

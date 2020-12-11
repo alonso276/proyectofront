@@ -1,9 +1,11 @@
-
+/* inicio header */
+header nav b{
+    font-size: 1.30em;
+}
+/*  fin header */
 /* inicio footer styles */
 .page-footer{
-
     background-color: black;
     color:white;
 }
-
 /* fin footer styles */

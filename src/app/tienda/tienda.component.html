@@ -1,73 +1,89 @@
-<div class="row">
-    <div class="col-2"></div>
-
-    <div class="col-6">
-        <div class="card-group">
-            <div class="card">
-                <img class="card-img-top" src="../assets/images/tomates_1.jpg" alt="">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a href="#" class="btn btn-primary ">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional
-                        content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-2"></div>
-    <div class="col-6">
+<section class="pt-5">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+            <div id="top"></div>
+            <div class="col-3">
+                <app-filtro></app-filtro>
             </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-7 mb-4 tienda">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 mt-4">
+                        <!-- <div class="col-xl-4 col-lg-4 col-md-6 mt-4"></div> -->
+                        <div class="card border-0">
+                            <img class="card-img-top" src="../assets/images/tomates_1.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Producto Nombre</h5>
+                                <p class="card-text">PRODUCTOR</p>
+                                <!-- Productor-detalleComponent -->
+                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
+                                <p class="card-text">Descripcion producto</p>
+                                <p class="card-text ">Cantidad - Precio €</p>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
+                                    <img src="../assets/images/icono-vegan.jpg" height="55px">
+                                </div>
+                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mt-4">
+                        <div class="card border-0">
+                            <img class="card-img-top" src="../assets/images/miel_1.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Producto Nombre</h5>
+                                <p class="card-text">PRODUCTOR</p>
+                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
+                                <p class="card-text">Descripcion producto</p>
+                                <p class="card-text">Cantidad - Precio €</p>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
+                                    <img src="../assets/images/icono-bio.jpg" height="55px">
+                                </div>
+                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mt-4">
+                        <div class="card border-0">
+                            <img class="card-img-top" src="../assets/images/queso_1.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Producto Nombre</h5>
+                                <p class="card-text">PRODUCTOR</p>
+                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
+                                <p class="card-text">Descripcion producto</p>
+                                <p class="card-text">Cantidad - Precio €</p>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
+                                    <img src="../assets/images/icono-organic.jpg" height="55px">
+                                </div>
+                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 mt-4">
+                        <div class="card border-0">
+                            <img class="card-img-top" src="../assets/images/cerveza_1.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">Producto Nombre</h5>
+                                <p class="card-text">PRODUCTOR</p>
+                                <p class="card-text">Descripcion producto</p>
+                                <p class="card-text">Cantidad - Precio €</p>
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
+                                    <img src="../assets/images/icono-vegan.jpg" height="60px">
+                                </div>
+                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <a href="#top" class="arrow-top d-flex flex-row-reverse">
+                    <i class="fas fa-angle-double-up"></i>
+                </a>
             </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+            <div class="col-2 mt-4">
+                <!-- <app-cesta></app-cesta> -->
             </div>
         </div>
     </div>
-</div>
+</section>

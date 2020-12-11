@@ -1,1 +1,80 @@
-<p>form-usuarios works!</p>
+<body>
+    <div class="content">
+        <div class="text">Registro Usuario</div>
+        
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-user"></span>
+                    <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">* El
+                    nombre es requerido</p>
+            </div>
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-user"></span>
+                    <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">* Los apellidos son requeridos</p>
+            </div>
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-at"></span>
+                    <!-- class.is-invalid -> muestra alerta roja a la derecha del campo -->
+                    <input type="text" class="form-control" placeholder="Email"
+                        [class.is-invalid]="formulario.get('email').invalid && formulario.get('email').hasError('pattern')"
+                        formControlName="email">
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
+                    * El email es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
+                    * El email debe tener un formato correcto</p>
+            </div>
+            <div>
+                <!-- Alternativa: class.is-invalid -> muestra alerta roja a la derecha del campo. En este caso se solapa con el icono ojo para ver password -->
+                <div class="form-group field">
+                    <span class="fas fa-lock"></span>
+                    <input [type]="tipoPassword" class="form-control" placeholder="Password"
+                        formControlName="contraseña">
+                    <div class="ver-contraseña">
+                        <span class="fas fa-eye gris" (click)="onClick($event)"></span>
+                    </div>
+                </div>
+                <p class="text-primary aviso"
+                    *ngIf="formulario.get('contraseña').hasError('required') && formulario.get('contraseña').touched">
+                    * El password es requerido</p>
+                <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
+                    * El password debe tener entre 4 y 8 caracteres</p>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-map-marker-alt"></span>
+                <input type="text" class="form-control" placeholder="Dirección" formControlName="direccion">
+            </div>
+            <div>
+                <div class="form-group field">
+                    <span class="fas fa-mobile-alt"></span>
+                    <input type="tel" class="form-control" placeholder="Teléfono" formControlName="telefono">
+                </div>
+                <p class="text-primary aviso" *ngIf="formulario.get('telefono').hasError('pattern')">
+                    * El número de teléfono debe tener 9 dígitos</p>
+            </div>
+            <div class="form-group field">
+                <span class="fas fa-user-circle"></span>
+                <select class="form-control custom-select mb-3" formControlName="perfil">
+                    <option disabled selected value="">Perfil:</option>
+                    <option value="comprador">Comprador</option>
+                    <option value="productor">Productor</option>
+                    <option value="ambos">Ambos</option>
+                    <option value="nd">No definido</option>
+                </select>
+                <label>Perfil</label>
+            </div>
+            <!-- boton enviar desabilitado hasta completar todos los campos correctamente según validadores -->
+            <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
+        </form>
+    </div>
+</body>
