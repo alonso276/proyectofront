@@ -12,7 +12,7 @@
                 </div>
                 <p class="text-primary aviso"
                     *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
-                    * El campo email es requerido</p>
+                    * El email es requerido</p>
                 <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
                     * El email debe tener un formato correcto</p>
             </div>
@@ -33,7 +33,7 @@
                     * El password debe tener entre 4 y 8 caracteres</p>
             </div>
 
-            <div class="forgot-pass"><a href="#">Olvidé mi Password?</a></div>
+            <div class="forgot-pass"><a href="#">Olvidaste tu Password?</a></div>
             <!-- boton enviar desabilitado hasta completar todos los campos correctamente según validadores -->
             <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
             <div class="signup">Aún no eres miembro?

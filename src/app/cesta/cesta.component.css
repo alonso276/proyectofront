@@ -6,7 +6,7 @@
 }
 .cesta .mi-cesta:hover{
     background-color: #035bb9;
-}
+}  
 .cesta .modal-title{
     /* color: #007bff; */
     color: white;
@@ -37,6 +37,10 @@
 }
 .cesta ul h3{
     color: #007bff;
+}
+.cesta i.equis{
+    color: red;
+    margin-top: 6px;
 }
 .cesta div.iva{
     color: gray;

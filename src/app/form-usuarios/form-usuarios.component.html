@@ -8,7 +8,7 @@
                     <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
                 </div>
                 <p class="text-primary aviso"
-                    *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">* El campo
+                    *ngIf="formulario.get('nombre').hasError('required') && formulario.get('nombre').touched">* El
                     nombre es requerido</p>
             </div>
             <div>
@@ -17,8 +17,8 @@
                     <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellidos">
                 </div>
                 <p class="text-primary aviso"
-                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">* El
-                    campo apellidos es requerido</p>
+                    *ngIf="formulario.get('apellidos').hasError('required') && formulario.get('apellidos').touched">*
+                    Los apellidos son requeridos</p>
             </div>
             <div>
                 <div class="form-group field">
@@ -30,7 +30,7 @@
                 </div>
                 <p class="text-primary aviso"
                     *ngIf="formulario.get('email').hasError('required') && formulario.get('email').touched">
-                    * El campo email es requerido</p>
+                    * El email es requerido</p>
                 <p class="text-primary aviso" *ngIf="formulario.get('email').hasError('pattern')">
                     * El email debe tener un formato correcto</p>
             </div>
@@ -48,7 +48,7 @@
 
                 <p class="text-primary aviso"
                     *ngIf="formulario.get('contraseña').hasError('required') && formulario.get('contraseña').touched">
-                    * El campo password es requerido</p>
+                    * El password es requerido</p>
                 <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
                     * El password debe tener entre 4 y 8 caracteres</p>
             </div>

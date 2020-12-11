@@ -4,11 +4,10 @@
         <div class="content">
             <div class="field">
                 <select class="browser-default custom-select w-60 mt-0">
-                    <option disabled selected>Municipio</option>
+                    <option disabled selected>Comarcas</option>
                     <option value="todas">Todos</option>
-                    <option value="todas">Cercedilla</option>
-                    <option value="todas">Madrid</option>
-                    <option value="todas">San Martín de la Vega</option>
+                    <option *ngFor="let comarca of comarcas" [value]="comarca.comarca">{{ comarca.comarca }}
+                    </option>
                     <!-- <option *ngFor="let categoria of categorias" [value]="categoria.nombre">
                 {{ categoria.nombre | titlecase }} ({{ categoria.num }})
             </option> -->
@@ -36,8 +35,6 @@
             <li>Cereales (click->info)</li>
             <li>Bebidas (click->info)</li>
             <li>Despensa (click->info)</li>
-
-
             <!-- <li *ngFor="let autor of autores">
                 <img class="img-autor" src="./assets/images/avatar_{{autor.toLowerCase()}}.jpg">
                 {{autor}}

@@ -24,9 +24,12 @@ header .navbar-nav .linea{
     border-left: 1px solid white;
 }
 /* Fin Header */
-
+  
 /* Inicio main */
 main{
     padding-top: 66px;
 }
 /* Fin main */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

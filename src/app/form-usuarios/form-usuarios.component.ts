@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-form-usuarios',
@@ -14,7 +15,7 @@ export class FormUsuariosComponent implements OnInit {
   tipoPassword: string;
 
   //inyecto en constructor
-  constructor() {
+  constructor(private usuariosService: UsuariosService) {
 
     this.tipoPassword = 'password';
 
@@ -57,9 +58,13 @@ export class FormUsuariosComponent implements OnInit {
     //equivale: this.tipoPassword = (this.tipoPassword == 'text') ? 'password' : 'text';
   }
 
-  //Provisional (Prueba)
   onSubmit() {
-    console.log(this.formulario.value);
+    //console.log(this.formulario.value);
+    this.usuariosService.registro(this.formulario.value)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => console.log(error));
     this.formulario.reset();
   }
 

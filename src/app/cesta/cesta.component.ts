@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto, ProductosService } from '../services/productos.service';
 
 @Component({
   selector: 'app-cesta',
@@ -7,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CestaComponent implements OnInit {
 
-  constructor() { }
+  productos: Producto[];
+
+  constructor(private productosService: ProductosService) { }
 
   ngOnInit(): void {
+    //PRUEBA MARIO TOOLTIP
+    //$(document).ready(function () {
+    //  $('[data-toggle="tooltip"]').tooltip();
+    //});
+
+    this.productosService.getAll()
+      .then(response => {
+        this.productos = response;
+      })
+      .catch(error => console.log(error));
   }
 
 
 }
+

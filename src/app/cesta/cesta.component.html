@@ -1,7 +1,13 @@
 <div class="cesta">
-    <!-- Button trigger modal -->
+    <!-- Button trigger modal de bootstrap -->
     <button type="button" class="btn btn-primary mi-cesta" data-toggle="modal" data-target="#exampleModal">
         Mi Cesta
+    </button>
+
+    <!-- PRUEBA Button tooltip de angular materials -->
+    <button mat-raised-button matTooltip="Me lleva a Mi Cesta" type="button" class="btn btn-primary" data-toggle="modal"
+        data-target="#exampleModal">
+        Tolltip
     </button>
 
     <!-- Modal -->
@@ -31,7 +37,7 @@
                                         <p class="mb-0">1 Unidad</p>
                                     </div>
                                     <div class="col-md-2 text-right">+ 1 -</div>
-                                    <p class="text-danger">X</p>
+                                    <i class="fas fa-times equis"></i>
                                     <div class="col-md-2 text-right pr-1">Precio €</div>
                                 </div>
                             </li>
@@ -122,3 +128,11 @@
         </button>
     </span>
 </div> -->
+
+<!-- PRUEBA getAll PRODUCTOS -->
+<p class="mb-1 mt-3"><b>LISTA de Prueba getAll Productos:</b></p>
+<ul *ngFor="let producto of productos">
+    <li>{{producto.nombre}}</li>
+    <li>{{producto.categoria}}</li>
+    <li>{{producto.precio}} €</li>
+</ul>

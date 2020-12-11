@@ -13,15 +13,17 @@
     font-weight: 700;
     margin-top: 10%;
 }
-.hero .titulo{
-    position: relative;
-    left: 43px;
-    bottom: 15px;
+.hero .slogan{
+    margin-top: 20vh;
+    margin-bottom: 15px;
 }
-.hero .titulo-dos{
+.hero .sciente{
     position: relative;
-    left: 22px;
-    bottom: 30px;
+    top: -8px;
+}
+.hero .ecta{
+    position: relative;
+    top: -16px;
 }
 .hero .p1{
     font-size: 1.75em;
