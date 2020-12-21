@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Producto {
@@ -41,13 +41,25 @@ export class ProductosService {
   }
 
   //Recupera productos por productor (id)
-  getByProductorId(pProductorId: number): Promise<Producto[]> {
-    return this.httpClient.get<Producto[]>(`${this.baseUrl}/from/${pProductorId}`).toPromise();
+  getByProductorId(pProductorfkUsuario: number): Promise<Producto[]> {
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/from/${pProductorfkUsuario}`).toPromise();
   }
 
   //Recupera productos por comarca
   getByProductComarca(pComarca: string): Promise<Producto[]> {
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/com/${pComarca}`).toPromise();
   }
+
+  //?MULTER
+  createim(fd: FormData) {
+    const httpOptions = {
+     headers: new HttpHeaders({
+     'Authorization': localStorage.getItem('token_pf')
+      })
+     }
+    return this.httpClient.post(`${this.baseUrl}/registro`, fd,httpOptions).toPromise();
+  }
+
+  
 
 }

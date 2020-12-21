@@ -1,12 +1,71 @@
-/* inicio header */
+/* Inicio header */
 header nav b{
     font-size: 1.30em;
 }
-/*  fin header */
+header nav .login{
+    font-weight: 500;
+}
+header .fa-user-circle{
+    color: #007BFF;
+    margin-left: 20px;
+    transform: scale(1.9);
+}
+header .fa-user-circle:hover{
+    color: lightcoral;
+    cursor: pointer;
+    transform: scale(2.4);
+}
+/* Fin header */
+/* inicio -> nav registro desplegable */
+#registro {
+    margin-top:8px;
+}
+#registro .texto{
+    color: #A09F9F;
+    margin: 0 6px;
+    cursor: pointer;
+}
+#registro .texto:hover{
+    color: #D3D1D1;
+}
+ul {
+    list-style:none;
+}
+.nav > li {
+    float:left;
+}
+.nav li a {
+    background-color:#343a40;
+    color:#fff;
+    text-decoration:none;
+    padding:5px 10px;
+    display:block;
+}
+.nav li a:hover {
+    background-color:#5a5a5a;
+}
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:100px;
+    padding-top: 5px;
+}
+.nav li:hover > ul {
+    display:block;
+}
+
+/* fin -> nav registro desplegable */
+
+
 /* inicio footer styles */
 
 .page-footer{
     background-color: black;
     color:white;
+}
+
+footer .enlace{
+
+    cursor:pointer;
 }
 /* fin footer styles */

@@ -1,0 +1,66 @@
+<div class="container">
+<h2 class="titulo">Procedimiento de Registro</h2>
+<div class="card-deck">
+    <!-- #1 -->
+    <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header border-secondary text-center"><b>Paso 1</b></div>
+        <div class="card-body bg-light text-secondary">
+            <h3 class="card-title text-center text-dark mb-5"><b>Navega por la APP</b></h3>
+            <p class="card-text">Acceso abierto a toda la Aplicación. Incluido navegación por Tienda y añadir
+                productos a tu
+                Cesta.</p>
+        </div>
+        <div class="card-footer bg-transparent border-secondary text-center">
+            <a [routerLink]="['/inicio']" title="Ir a Inicio" class="card-link texto-azul">Ir a Inicio</a>
+        </div>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+    <!-- #2 -->
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-primary border-primary text-center text-white"><b>Paso 2</b></div>
+        <div class="card-body bg-light text-primary">
+            <h3 class="card-title text-center text-dark mb-3"><b>Hazte Usuario</b></h3>
+            <i class="fas fa-user-circle mb-3"></i>
+            <p class="card-text text-dark">Primero regístrate como Usuario. Haz <a [routerLink]="['/login']"
+                    title="Ir a Login">Login</a> con tu Email y Contraseña. Ahora ya podrás comprar en la Tienda y/o
+                registrarte como Productor.</p>
+        </div>
+        <div class="card-footer bg-transparent border-primary text-center">
+            <a [routerLink]="['/registro']" title="Ir a Registro Usuario" class="card-link texto-oscuro">Ser
+                Usuario</a>
+        </div>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+    <!-- #3 -->
+    <div class="card border-verde mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-verde border-verde text-center text-white"><b>Paso 3</b></div>
+        <div class="card-body bg-light text-verde">
+            <h3 class="card-title text-center text-dark mb-3"><b>Hazte Productor</b></h3>
+            <i class="fas fa-users mb-3"></i>
+            <p class="card-text text-dark">Registrarte como Productor te permitirá mostar tus datos de contacto,
+                productos y tu ubicación en la Aplicación.</p>
+        </div>
+        <div class="card-footer bg-transparent border-top-verde text-center">
+            <a [routerLink]="['/productores/nuevo']"
+                title="Ir a Registro Productor &#10;Primero has de registrarte &#10;como Usuario"
+                class="card-link texto-oscuro">Ser Productor</a>
+        </div>
+    </div>
+    <i class="fas fa-arrow-right"></i>
+    <!-- #4 -->
+    <div class="card border-verde mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-verde border-verde text-center text-white"><b>Paso 4</b></div>
+        <div class="card-body bg-light text-verde">
+            <h3 class="card-title text-center text-dark mb-3"><b>Añade tus Productos</b></h3>
+            <i class="fas fa-apple-alt mb-3"></i>
+            <p class="card-text text-dark">Una vez registrado como Productor, podrás introducir tus productos dentro
+                en tu perfil y mostrarlos dentro de la Tienda.</p>
+        </div>
+        <div class="card-footer bg-transparent border-top-verde text-center">
+            <a [routerLink]="['/productos/nuevo']"
+                title="Ir a Registro Producto&#10;Primero has de registrarte &#10;como Productor"
+                class="card-link texto-oscuro">Añadir Producto</a>
+        </div>
+    </div>
+</div>
+</div>

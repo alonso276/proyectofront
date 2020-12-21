@@ -1,0 +1,58 @@
+*{
+    font-size: 16px;
+}
+.card{
+    height: 55vh;
+    border-radius: 10px;
+}
+.card-deck{
+    height: 68vh;
+    margin-top: 13vh;
+}
+.bg-verde{
+    background-color: #00BC9B;
+}
+.border-verde{
+    border: 1px solid #00BC9B;
+}
+.border-top-verde{
+    border-top: 1px solid #00BC9B;
+}
+.text-verde{
+    color: #00BC9B;
+}
+.fa-arrow-right{
+   
+    transform: scale(1.4);
+    margin-top:4.7em;
+    height:2em;
+}
+.card-deck{
+    margin-top: 25px;
+}
+.texto-oscuro{
+    color: #343A40;
+    font-weight: 500;
+}
+.texto-oscuro:hover{
+    color: #007BFF;
+}
+.texto-azul:hover{
+    font-weight: 500;
+    color: #007BFF;
+}
+.titulo{
+    margin-top: 25px;
+}
+.fa-user-circle{
+    margin-left: 45%;
+    transform: scale(1.7);
+}
+.fa-users{
+    margin-left: 45%;
+    transform: scale(1.7);
+}
+.fa-apple-alt{
+    margin-left: 45%;
+    transform: scale(1.7);
+}

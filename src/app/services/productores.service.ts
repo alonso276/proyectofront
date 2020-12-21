@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 export interface Productor {
@@ -9,10 +9,14 @@ export interface Productor {
   municipio: string;
   actividad: string;
   direccion_produccion: string;
+  //?añado lat lon para g maps
+  lat:number;
+  lon:number;
   email_empresa: string;
   telefono_empresa: number;
   imagen: string;
   comentario: string;
+  fk_usuario:number;
 }
 
 @Injectable({
@@ -27,7 +31,13 @@ export class ProductoresService {
   }
 
   create(formValues): Promise<Productor> {
-    return this.httpClient.post<Productor>(`${this.baseUrl}/registro`, formValues).toPromise();
+    const httpOptions = {
+    headers: new HttpHeaders({
+       'Authorization': localStorage.getItem('token_pf')
+     })
+    }
+
+    return this.httpClient.post<Productor>(`${this.baseUrl}/registro`, formValues,httpOptions).toPromise();
   }
 
   getAll(): Promise<Productor[]> {
@@ -56,4 +66,38 @@ export class ProductoresService {
     return this.httpClient.get<Productor[]>(`${this.baseUrl}/cat/${pCategoria}`).toPromise();
   }
 
+
+  //Recupera municipios
+  getMunicipio(): Promise<string[]> {
+    return this.httpClient.get<string[]>(`${this.baseUrl}/municipio`).toPromise();
+  }
+
+
+
+  //Recupera productores por municipio
+  getByMunicipio(pMunicipio: string): Promise<Productor[]> {
+    return this.httpClient.get<Productor[]>(`${this.baseUrl}/mun/${pMunicipio}`).toPromise();
+  }
+
+  //Recupera valor productor: 0 o 1 de la tabla usuario, para comprobar si el usario esta registrado como productor y permitirle con un guard registrar producto
+  getProductorRegistro(): Promise<string[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token_pf')
+      })
+    }
+    return this.httpClient.get<string[]>(`${this.baseUrl}/comprobarRegistro`, httpOptions).toPromise();
+  }
+  
+   //?MULTER
+  createim(fd: FormData) {
+    const httpOptions = {
+     headers: new HttpHeaders({
+     'Authorization': localStorage.getItem('token_pf')
+      })
+     }
+    return this.httpClient.post(`${this.baseUrl}/registro`, fd,httpOptions).toPromise();
+  }
+
+  
 }

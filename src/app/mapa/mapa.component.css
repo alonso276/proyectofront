@@ -1,36 +1,91 @@
 
-agm-map{
-
-    width:370px;
-    height:370px;
-    margin:10px;
+.containermapa{
+   max-width:700px;
+   margin:0 auto;
+   margin-top:70px;
+   margin-bottom:50px;
+   align-items: center;
+   padding:20px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ 
 }
-
-.buscar{
-   width:300px;
-
-}
-.busqueda{
-   margin-top:10px;
-}
-
-
-/* inicio productores */
-
-.card-group .card{
-    background-color:#00D0C6;
-    border:2px solid black;
-    max-height:600px;
-    margin-top:40px;
-    margin-bottom:20px;
-    
+.search{
+      
+      width:600px;
+      height:60px;
+      background-color: #00bc9b;
+      display:flex;
+      justify-content:left;
+      align-items: center;
+      
      
- }
- .card-group .card-title{
-    text-align:center;
- }
+}
+.search .fa-search{
+    font-size: 30px;
+    margin-left:0.5rem;
+    color:white;
+}
+
+agm-map{
+   width:600px;
+   height:600px;
+}
+.mapa{
+
+    width:600px;
+    height:600px;
+       
+}
+
+  #inputPlaces {
+    width: 450px;
+    height: 40px;
+    font-size: 1.2rem;
+    border: 5px solid black; 
+    margin-left:2rem;
  
+  }
+
+#inputPlaces {
+ color: #1b80b7;
+ transition: all .2s linear;
+}
+
+#inputPlaces:hover { color: #52bff2; }
 
 
- /** FIN card productores**/
- 
+@media(max-width: 48.000em){
+
+.containermapa{
+margin:0 auto;
+
+
+}
+
+.search{
+      width: 320px;
+     
+}
+     agm-map{
+     
+      width:320px;
+      height:320px;
+    }    
+    .mapa{
+
+    width:320px;
+    height:320px;
+   
+   
+    } 
+    #inputPlaces {
+    width: 300px;
+    height: 40px;
+    font-size: 1rem;
+    border: 5px solid black; 
+    margin-left:1rem;
+    }
+
+ }

@@ -2,7 +2,7 @@
     <div class="content">
         <div class="text">Registro Productores</div>
         <!-- Para formularios con input (type="file") => enctype="multipart/form-data" -->
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
             <div class="form-group field">
                 <span class="fas fa-user"></span>
                 <input type="text" class="form-control" placeholder="Nombre de empresa"
@@ -70,13 +70,18 @@
                 * El teléfono es requerido</p>
             <p class="text-primary aviso" *ngIf="formulario.get('telefono_empresa').hasError('pattern')">
                 * El número de teléfono debe tener 9 dígitos</p>
-            <div class="form-group field">
+             <div class="form-group field">
                 <span class="fas fa-images"></span>
-                <input type="file" class="form-control" placeholder="Adjunta tu imagen" formControlName="imagen">
-            </div>
-            <p class="text-primary aviso"
+
+                <!-- ?multer -->
+                <input type="file" class="form-control" name="imagen" (change)="onChange($event)">
+
+                
+                <!-- <input type="file" class="form-control" placeholder="Adjunta tu imagen" formControlName="imagen"> -->
+           </div> 
+            <!-- <p class="text-primary aviso"
                 *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">
-                * La imagen es requerida</p>
+                * La imagen es requerida</p> -->
             <div class="form-group field">
                 <span class="fas fa-comment"></span>
                 <input type="textarea" class="form-control" placeholder="Introduce tus comentarios"
@@ -85,6 +90,7 @@
             <p class="text-primary aviso"
                 *ngIf="formulario.get('comentario').hasError('required') && formulario.get('comentario').touched">
                 * El comentario es requerido</p>
+                
             <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
         </form>
     </div>

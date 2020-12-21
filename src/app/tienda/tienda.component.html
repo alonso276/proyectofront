@@ -1,206 +1,104 @@
 <section class="pt-5">
     <div class="container">
         <div class="row">
+            <!-- Filtro -->
             <div class="col-3">
-                <app-filtro></app-filtro>
+                <section>
+                    <div class="filtro">
+                        <p class="mt-3"><b>Productores próximos:</b></p>
+                        <div class="content">
+                            <div class="field">
+                                <select class="browser-default custom-select w-60 mt-0" (change)="onChange($event)">
+                                    <option disabled selected>Comarcas</option>
+                                    <option value="todas">Todas</option>
+                                    <option *ngFor="let comarca of comarcasSinRepetir" [value]="comarca">
+                                        {{ comarca }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <ul>
+                            <p class="mb-1 mt-3"><b>Cerca de mi:</b></p>
+                            <p><b>Selecciona Productos por Productor:</b></p>
+                            <li><a (click)="onClickMostrarTodos()">Todos</a></li>
+                            <li *ngFor="let productor of productores"> <a
+                                    (click)="onClickProductorId(productor.fk_usuario)">{{productor.nombre_empresa}} -
+                                    id: {{productor.id}} (click)</a>
+                            </li>
+                        </ul>
+                        <!-- Linea de separacion entre productores y productos -->
+                        <div class="linea"></div>
+                        <ul>
+                            <p class="mb-1 mt-3"><b><a (click)="ocultarListaPorCat()">Selecciona Productos por
+                                        Categoria:</a></b></p>
+                            <div *ngIf="muestraListaPorCat">
+                                <li><a (click)="onClickMostrarTodos()">Todas</a></li>
+                                <li *ngFor="let categoria of categoriasSinRepetir"><a
+                                        (click)="onClickProductCategoria(categoria)">{{categoria}}
+                                        (click)</a></li>
+                            </div>
+                        </ul>
+                        <ul>
+                            <p class="mb-1 mt-3"><b><a (click)="ocultarListaPorCom()">Selecciona Productos por
+                                        Comarca:</a></b></p>
+                            <div *ngIf="muestraListaPorCom">
+                                <li><a (click)="onClickMostrarTodos()">Todas</a></li>
+                                <li *ngFor="let comarca of comarcasSinRepetir"><a
+                                        (click)="onClickProductComarca(comarca)">{{comarca}}
+                                        (click)</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </section>
             </div>
-
+            <!-- Fin Filtro -->
+            <!-- Tienda Productos -->
             <div class="col-7 mb-4 tienda">
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 mt-4">
-                        <div id="top"></div>
-                        <!-- <div class="col-xl-4 col-lg-4 col-md-6 mt-4"></div> -->
-                        <div class="card border-0">
-                            <img class="card-img-top" src="../assets/images/tomates_1.jpg" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Producto Nombre</h5>
-                                <p class="card-text">PRODUCTOR</p>
-                                <!-- Productor-detalleComponent -->
-                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
-                                <p class="card-text">Descripcion producto</p>
-                                <p class="card-text ">Cantidad - Precio €</p>
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
-                                    <img src="../assets/images/icono-vegan.jpg" height="55px">
-                                    <!-- <div class="img-dpto" [ngSwitch]="empleadoDetalle.departamento">
-                                        <img src="assets/images/contabilidad.png" *ngSwitchCase="0">
-                                        <img src="assets/images/marketing.png" *ngSwitchCase="1">
-                                        <img src="assets/images/desarrollo.png" *ngSwitchCase="2">
-                                    </div> -->
+                <div id="top"></div>
+                <ul>
+                    <div class="row">
+                        <!--  mostar solo los seleccionados -->
+                        <!-- <li *ngFor="let productor of productores">{{productor.nombre_empresa}}</li> -->
+                        <li class="col-xl-4 col-md-6 mt-4" *ngFor="let producto of productos">
+                            <div>
+                                <div class="card border-0">
+                                    <img class="card-img-top" src="http://localhost:3000/images/{{producto.imagen}}" alt="">
+                                    <div class="card-body p-3">
+                                        <h3 class="card-title">{{producto.nombre}}</h3>
+                                        <!-- <p class="card-text">PRODUCTOR: {{producto.productor}}</p> -->
+                                        <!-- Productor-detalleComponent -->
+                                        <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
+                                        <p class="card-text">{{producto.descripcion}}</p>
+                                        <p class="card-text ">{{producto.cantidad}} - {{producto.precio}} €</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <p class="card-text" class="text-muted">
+                                                {{producto.categoria | titlecase}}
+                                            </p>
+                                            <div class="img-certificado" [ngSwitch]="producto.certificado">
+                                                <img src="../assets/images/icono-bio.jpg" *ngSwitchCase="'bio'"
+                                                    height="55px">
+                                                <img src="../assets/images/icono-eco.png" *ngSwitchCase="'eco'"
+                                                    height="55px">
+                                                <img src="../assets/images/icono-vegan.jpg" *ngSwitchCase="'vegan'"
+                                                    height="55px">
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-outline-secondary"
+                                            (click)="onClickAnadirProducto(producto)">Añadir cesta</a>
+                                    </div>
                                 </div>
-                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
                             </div>
-                        </div>
+                        </li>
                     </div>
-                    <div class="col-xl-4 col-md-6 mt-4">
-                        <div class="card border-0">
-                            <img class="card-img-top" src="../assets/images/miel_1.jpg" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Producto Nombre</h5>
-                                <p class="card-text">PRODUCTOR</p>
-                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
-                                <p class="card-text">Descripcion producto</p>
-                                <p class="card-text">Cantidad - Precio €</p>
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
-                                    <img src="../assets/images/icono-bio.jpg" height="55px">
-                                </div>
-                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 mt-4">
-                        <div class="card border-0">
-                            <img class="card-img-top" src="../assets/images/queso_1.jpg" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Producto Nombre</h5>
-                                <p class="card-text">PRODUCTOR</p>
-                                <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
-                                <p class="card-text">Descripcion producto</p>
-                                <p class="card-text">Cantidad - Precio €</p>
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
-                                    <img src="../assets/images/icono-organic.jpg" height="55px">
-                                </div>
-                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 mt-4">
-                        <div class="card border-0">
-                            <img class="card-img-top" src="../assets/images/cerveza_1.jpg" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">Producto Nombre</h5>
-                                <p class="card-text">PRODUCTOR</p>
-                                <p class="card-text">Descripcion producto</p>
-                                <p class="card-text">Cantidad - Precio €</p>
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <p class="card-text"><small class="text-muted">Categoria</small></p>
-                                    <img src="../assets/images/icono-vegan.jpg" height="60px">
-                                </div>
-                                <a href="#" class="btn btn-outline-secondary">Añadir cesta</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <a href="#top" class="arrow-top d-flex flex-row-reverse">
-                    <i class="fas fa-angle-double-up"></i>
-                </a>
+                </ul>
+                <a href="#top" class="arrow-top d-flex flex-row-reverse"><i class="fas fa-angle-double-up"></i></a>
             </div>
+            <!-- Fin Tienda Productos -->
+            <!-- Cesta -->
             <div class="col-2 mt-4">
                 <app-cesta></app-cesta>
             </div>
+            <!-- Fin Cesta -->
         </div>
     </div>
 </section>
-
-<!-- VIENE DE CAROUSEL -->
-
-<div class="col-3">
-    <section>
-        <div class="filtro">
-            <p class="mt-3"><b>Productores próximos:</b></p>
-            <div class="content">
-                <div class="field">
-                    <select class="browser-default custom-select w-60 mt-0" (change)="onChange($event)">
-                        <option disabled selected>Comarcas</option>
-                        <option value="todas">Todas</option>
-                        <option *ngFor="let comarca of comarcasSinRepetir" [value]="comarca">
-                            {{ comarca }}
-                        </option>
-                        <!-- <option *ngFor="let categoria of categorias" [value]="categoria.nombre">
-                {{ categoria.nombre | titlecase }} ({{ categoria.num }})
-            </option> -->
-                    </select>
-                </div>
-                <a href="#top" class="arrow-top d-flex flex-row-reverse">
-                    <i class="fas fa-angle-double-up"></i>
-                </a>
-            </div>
-            <div class="col-2 mt-4">
-                <!-- <app-cesta></app-cesta> -->
-            </div>
-
-            <ul class="">
-                <p class="mb-1 mt-3"><b>Cerca de mi:</b></p>
-                <li *ngFor="let productor of productores"> <a
-                        (click)="onClickProductorId(productor.id)">{{productor.nombre_empresa}}-{{productor.id}}
-                        (click->muetra productos)</a>
-                </li>
-                <!-- <li>Nombre de Productor (click->info)</li> -->
-                <!-- <li *ngFor="let autor of autores">
-                <img class="img-autor" src="./assets/images/avatar_{{autor.toLowerCase()}}.jpg">
-                {{autor}} </li> -->
-            </ul>
-
-            <!-- LISTADO BUENO!! -->
-            <!-- <ul class="">
-                <p class="mb-1 mt-3"><b>Categorias:</b></p>
-                <li> <a href="#">Lacteos (click->info)</a></li>
-                <li>Frutas (click->info)</li>
-                <li>Verduras (click->info)</li>
-                <li>Cereales (click->info)</li>
-                <li>Bebidas (click->info)</li>
-                <li>Despensa (click->info)</li>
-                <li *ngFor="let autor of autores">
-                <img class="img-autor" src="./assets/images/avatar_{{autor.toLowerCase()}}.jpg">
-                {{autor}}
-            </li>
-            </ul> -->
-
-            <!-- SELECT DE PRUEBA xa Listado de Categorias de Productos -->
-            <!-- (change)="onChangeCatProd($event)" -->
-            <p class="mb-1 mt-3"><b>Select de PRUEBAS por Categorias muestra Productos:</b></p>
-            <select class="browser-default custom-select w-60 mt-0" (change)="onChangeCatProd($event)">
-                <option disabled selected>Categorias</option>
-                <option value="todos">Todos</option>
-                <option *ngFor="let categoria of categoriasSinRepetir" [value]="categoria">
-                    {{ categoria }}
-                </option>
-            </select>
-
-            <!-- UL-LI DE PRUEBA xa Listado de Comarcas -->
-
-            <p>Lista de Comarcas para filtrar Productos</p>
-            <ul>
-                <li>PRUEBA PRODUCTOS</li>
-                <li *ngFor="let comarca of comarcasSinRepetir"><a (click)="onClickProductComarca(comarca)">{{comarca}}
-                        (click->muetra productos)</a></li>
-            </ul>
-
-
-            <!-- PRUEBA PRODUCTOS -->
-            <p>Lista de Productos por Categoria de Productos</p>
-            <ul *ngFor="let producto of productos">
-                <li>PRUEBA PRODUCTOS</li>
-                <li>{{producto.nombre}}</li>
-                <li>{{producto.categoria}}</li>
-                <li>{{producto.precio}}</li>
-            </ul>
-
-            <!-- Select de Prueba xa mostrar productores por categoria -->
-            <p class="mb-1 mt-3"><b>Select de PRUEBA por Categoria muestra Productores:</b></p>
-            <select (change)="onChangeCat($event)">
-                <option disabled selected>Productor por categoria</option>
-                <option value="todos">Todos</option>
-                <option *ngFor="let categoria of categoriasSinRepetir" [value]="categoria">
-                    {{ categoria }}
-                </option>
-            </select>
-
-            <!-- PRUEBA PRODUCTORES -->
-            <p>Lista de Productores por Categoria de Productos</p>
-            <ul *ngFor="let productor of productoresCat">
-                <li>PRUEBA PRODUCTORES</li>
-                <li>{{productor.nombre_empresa}}</li>
-                <li>{{productor.comarca}}</li>
-                <li>{{productor.actividad}}</li>
-            </ul>
-
-        </div>
-    </section>
-</div>
-
-
-<!-- Fin  -->

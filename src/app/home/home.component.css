@@ -1,40 +1,84 @@
-/* Inicio Hero */
+/*inicio subnav*/
+.logado{
+    height:9vh;
+    color:white;
+    background-color: #A9A9A9;
+    display:flex;
+    align-items:center;
+    flex-wrap: wrap;
+    
+    
+}
+
+.logado p{
+    font-size: 1.3rem; 
+     padding:0.3rem;
+     margin-left:11rem;
+}
+.logado a{
+    text-decoration:none;
+    padding:2em,1em,1em,1em;
+    background-color:#A9A9A9
+
+}
+
+.logado  .register{
+    padding:0.3rem;
+    font-size: 1.1rem;
+    margin-left:1.2rem;
+} 
+ @media(max-width: 48.000em){
+    
+    .logado{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top:0.3rem;
+    height:20vh;
+  } 
+  
+ }
+
+
+* Inicio Hero */
 .hero .jumbotron{
-    /* background-image: url("./assets/images/foto_hero.jpg"); */
-    /* background-color: #00D0C6; */
-    background-color: #00bc9b;
+     
+    background-image: url("/assets/images/foto_hero.jpg");
+    z-index:1;
+    /* background-color: #00bc9b; */
     background-size: cover;
-    height: 585px;
+    height: 90vh;
     opacity: 1;
     margin-bottom: 0;
 }
 .hero .lead{
     font-size: 2em;
     font-weight: 700;
-    margin-top: 10%;
+    margin-top: 2%;
 }
 .hero .slogan{
-    margin-top: 20vh;
+    font-size: 1.5em;
+    margin-top: 10vh;
     margin-bottom: 15px;
 }
 .hero .sciente{
     position: relative;
-    top: -8px;
+    top: 4px;
 }
 .hero .ecta{
     position: relative;
-    top: -16px;
+    top: 8px;
 }
 .hero .p1{
-    font-size: 1.75em;
+    margin-top: 6%;
 }
 .hero .p2{
     font-size: 1.25em;
 }
 .hero .btn{
-    font-size: 1.15em;
+    font-size: 1.4em;
 }
-
 @media(max-width: 48.000em){
     .hero{
       height: 60vh;
@@ -44,17 +88,74 @@
     }
   }
 /* Fin Hero */
+
+
 /**Inicio mvv**/
-
 .logomvv img{
-    width:50px;
-    height:50px;
-
+    width:70px;
+    height:70px;
+    margin-top:10px;
 }
-
 .card-title-mvv{
     text-align:center;
 }
 
+.card-group{
+    max-width:700px;
+    margin:0 auto;
+    padding-top:2rem;
+}
 
-/**fin mvv**/
+.card{
+
+    border:none;
+    margin:5px;
+}
+
+.imgadj{
+    
+    width: 100%;
+    height: auto;
+    margin-top:20px;
+}
+.card-img-top{
+
+      width:100%;
+      height:15vw;
+      margin:0 auto;
+      object-fit: cover;
+}
+
+.cardmvv-text{
+
+    width:80%;
+    height:13.75rem;
+    overflow: scroll;
+    margin:0 auto;
+}
+
+
+@media(max-width: 48.000em){
+
+    .logomvv img{
+        width:50px;
+        height:50px;
+        margin-top:5px;
+    }
+
+    .cardmvv-text{
+        width:70%;
+        height:25vw;
+        overflow: scroll;
+        
+    }
+    .card-img-top{
+      width:100%;
+      height:35vw;
+      margin:0 auto;
+      object-fit: cover;
+     }
+    
+  }
+   /* fin MVV */
+

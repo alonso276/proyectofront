@@ -1,67 +1,41 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-5">
-      <div class="busqueda">
-        <input class="buscar" type="search" placeholder="Encuentra productores cerca de ti" area-label="Buscar">
+<div class="containermapa ">
 
-        <button class="btn btn-primary" type="button">
-          <!-- click="onSubmit()" --> Buscar</button>
-      </div>
+        <div class="search">
 
+           <input type="text" id="inputPlaces" placeholder="Busca aquí productores cerca de ti"><i class="fas fa-search"></i>
+        </div>
+        
+        <div class="mapa">
 
-      <div class="mapa">
-        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12">
+          
+          <agm-map [latitude]="lat" [longitude]="lon" [zoom]="17" [fitBounds]="true" >
 
-          <agm-marker [latitude]="40.41" [longitude]="-3.70">
-            <!-- *ngFor="let productor of productores" -->
+           <agm-marker [latitude]="lat" [longitude]="lon">
+           </agm-marker>
 
+        
+          <agm-marker *ngFor="let productor of productores"
+
+            [latitude]="productor.lat"
+           
+            [longitude]="productor.lon"
+
+            [agmFitBounds]="true">
 
             <agm-info-window>
-              <!-- <h4>{{productor.nombre}}</h4>
-                    <p>{{productor.direccion}}</p> -->
-              Madrid!</agm-info-window>
+             <h3>{{productor.nombre_empresa }}</h3>
+              <p>{{productor.direccion_produccion}}</p>
+              <p>Email:{{productor.email_empresa}}</p>
+              <p>Tlf:{{productor.telefono_empresa}}</p>
+              <p><a href="#">Visitar web</a></p>
+            
+            </agm-info-window>
+
           </agm-marker>
 
-        </agm-map>
+         </agm-map>
       </div>
     </div>
 
 
-    <!-- productores -->
-    <div class="card-group col-sm-7">
-      <div class="card">
 
-        <div class="card-body">
-          <h5 class="card-title">Vegan Fromagerie</h5>
-          <img class="card-img-top" src="../../assets/images/prod_ej.jpg" alt="Card image cap">
-          <p class="card-text">Dirección:C/Alcalá 123, 28006, Madrid</p>
-          <p class="card-text">Actividad:Quesos</p>
-
-        </div>
-      </div>
-      <div class="card">
-
-        <div class="card-body">
-          <h5 class="card-title">Vegan Fromagerie</h5>
-          <img class="card-img-top" src="../../assets/images/prod_ej.jpg" alt="Card image cap">
-          <p class="card-text">Dirección:C/Alcalá 123, 28006, Madrid</p>
-          <p class="card-text">Actividad:Quesos</p>
-
-        </div>
-      </div>
-      <div class="card">
-
-        <div class="card-body">
-          <h5 class="card-title">Vegan Fromagerie</h5>
-          <img class="card-img-top" src="../../assets/images/prod_ej.jpg" alt="Card image cap">
-          <p class="card-text">Dirección:C/Alcalá 123, 28006, Madrid</p>
-          <p class="card-text">Actividad:Quesos</p>
-
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- fin productores -->

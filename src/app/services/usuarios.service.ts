@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+// import { JwtHelperService } from "@auth0/angular-jwt";
 
 export interface Usuario {
   nombre: string;
@@ -24,6 +25,30 @@ export class UsuariosService {
 
   registro(formValues): Promise<Usuario> {
     return this.httpClient.post<Usuario>(`${this.baseUrl}/registro`, formValues).toPromise();
+  }
+
+
+  
+  //?1.método login--replico la petición del back
+
+  login(formValues){
+    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+   }
+
+   isLogged():boolean{
+
+    if(localStorage.getItem('token_pf')){
+      return true;
+
+    }else
+    return false;
+   }
+  //  /?Descodificar Token
+    // recuperarUsuario() {
+    // const helper = new JwtHelperService();
+    // const decodedToken = helper.decodeToken(localStorage.getItem('token_pf'));
+    // //console.log(decodedToken);
+    // return decodedToken;
   }
 
 }

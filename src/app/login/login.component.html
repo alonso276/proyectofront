@@ -1,7 +1,9 @@
 <body>
     <div class="content">
         <div class="text">Login</div>
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <form  [formGroup]="formulario"
+        
+        (ngSubmit)="onSubmit()">
             <div>
                 <div class="form-group field">
                     <span class="fas fa-at"></span>
@@ -31,12 +33,20 @@
                 <p class="text-primary aviso" *ngIf="formulario.get('contraseña').hasError('pattern')">
                     * El password debe tener entre 4 y 8 caracteres</p>
             </div>
+
+           
             <div class="forgot-pass"><a href="#">Olvidaste tu Password?</a></div>
+
+            <p class="text-danger" *ngIf="mensajeError">
+                {{mensajeError}}
+              </p>
             <!-- boton enviar desabilitado hasta completar todos los campos correctamente según validadores -->
+
             <input type="submit" value="Enviar" class="btn" [disabled]="!formulario.valid">
-            <div class="signup">Aún no eres miembro?
-                <a href="#" title="Ir a Registro">Registrarme</a>
-            </div>
+
+         <div class="signup">Aún no eres miembro?
+             <a [routerLink]="['/registro']" title="Ir a Registro Usuario">Registrarme</a>
+         </div>
         </form>
     </div>
 </body>

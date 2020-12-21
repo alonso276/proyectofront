@@ -1,5 +1,7 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { Productor, ProductoresService } from '../services/productores.service';
+import { ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mapa',
@@ -8,89 +10,75 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaComponent implements OnInit {
 
+  @ViewChild('divMap') divMap: ElementRef;
+
+  mapa: google.maps.Map;
+  markers: google.maps.Marker[];
+
+  productores:Productor[];
   lat: number;
-  lng: number;
+  lon: number;
+  
 
-  constructor() {
-    this.lat = 40
-    this.lng = -3
 
+  constructor(
+    private productoresService:ProductoresService,
+    private ngZone:NgZone
+  ) {
+    this.lat = 40.333
+    this.lon = -3.999
+    
+   
   }
+  
 
   ngOnInit(): void {
+    
     navigator.geolocation.getCurrentPosition(position => {
+
+     
       this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
+      this.lon = position.coords.longitude;
+     
+
+      
     });
+
+
+    this.productoresService.getAll()
+        .then(response => {
+          this.productores = response;
+          // console.log(this.productores)
+        })
+        .catch(error => console.log(error));
+     
+        
+       /**buscar un lugar en el mapa */
+
+      const autocomplete= new google.maps.places.Autocomplete(document.querySelector('#inputPlaces')
+      );
+
+      google.maps.event.addListener(autocomplete, 'place_changed',event=>{
+      
+        // console.log(event);
+        const place= autocomplete.getPlace();
+           this.ngZone.run(()=>{
+                this.lat=place.geometry.location.lat()
+                this.lon=place.geometry.location.lng()
+                console.log(this.lat)
+                console.log(this.lon)
+
+           })
+          
+      })
+    
   }
 
+  
+
+  
 }
-//  import { Component, OnInit, ViewChild,ElementRef} from '@angular/core';
 
-//  @Component({
-//  selector: 'app-mapa',
-//  templateUrl: './mapa.component.html',
-// styleUrls: ['./mapa.component.css']
-//  };
-
-
-// export class MapaComponent implements OnInit {}
-
-//   @ViewChild('divMap')divMap:ElementRef;
-
-// //  mapa: google.maps.Map;
-//   // markers: google.maps.Marker[];
-
-//   constructor() { 
-
-
-//   }
-
-//   ngOnInit() {
-//     //get current position
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition((position) => {
-//          this.loadMap(position);
-//       })
-//     } else {
-//       console.log('Actualizate!!');
-//     }
-//   }
-
-//   loadMap(position) {
-//        const mapOptions = {           
-
-//           center: new google.maps.LatLng(position.coords. latitude, position.coords.longitude),
-//            zoom: 11,             
-//            mapTypeId: google.maps.MapTypeId.ROADMAP
-//     }     
-
-//       const mapa= new google.maps.Map(this.divMap.nativeElement, mapOptions);
-
-//       const icon={
-
-//         // url:' "https://developers.google.com/maps/documentation/javascript/examples/full/images/"',
-//         scaledSize:new google.maps.Size(100,100)
-//       }
-
-//       const marker=new google.maps.Marker({
-
-//          position:mapOptions.center,
-//          animation:google.maps.Animation.BOUNCE
-
-
-//      });
-
-//          marker.setMap(mapa);
-//         //  marker.setIcon('../../assets/images/localizador.jpg')
-
-//         google.maps.event.addListener(mapa, 'click', event => {
-//          console.log(event.latLng.lat())
-//         });
-
-//     }
-
-//   }
 
 
 

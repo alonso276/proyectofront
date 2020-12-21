@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
@@ -12,9 +13,18 @@ export class FormUsuariosComponent implements OnInit {
   formulario: FormGroup;
   //para ver contrasena
   tipoPassword: string;
+  checkboxActived:boolean;
+
+
+
   //inyecto en constructor
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService,
+               private router:Router
+    ) {
+
     this.tipoPassword = 'password';
+    this.checkboxActived=true;
+
     this.formulario = new FormGroup({
       nombre: new FormControl('', [
         Validators.required
@@ -63,7 +73,16 @@ export class FormUsuariosComponent implements OnInit {
         console.log(response);
       })
       .catch(error => console.log(error));
-    this.formulario.reset();
+      this.formulario.reset();
+      alert('Formulario enviado correctamente')
+      this.router.navigate(['']);
   }
+  
+  onChangeCheckboxActived() {
+    this.checkboxActived = !this.checkboxActived;
+    //console.log('Hola');
+  }
+
+
 
 }

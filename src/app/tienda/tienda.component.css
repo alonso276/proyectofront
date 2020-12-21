@@ -1,20 +1,5 @@
-/* Inicio Tienda */
-
-.tienda .btn:hover{
-    background-color: #007bff;
-}
-
-.tienda .arrow-top{
-    /* color: #8a8a8a; */
-    color: #007bff;
-    font-size: 1.70em;
-    margin: 8px 0;
-}
-/* Fin Tienda */
-
-
-/* VIENE DE CAROUSEL */
-/* .filtro{
+/* Inicio de Filtro */
+.filtro{
     border-right: 1px solid gray;
 }
 .filtro .img-autor{
@@ -23,11 +8,16 @@
 .filtro ul{
     list-style-type:none;
     }
+.filtro ul p a{
+    cursor: pointer;
+}
+.filtro ul p a:hover{
+    color: #007BFF;
+}
 .filtro a:link, a:visited, a:active {
-        text-decoration:none;
-        color: black;
+    text-decoration:none;
+    color: black;
     }
-
 .filtro select{  
     width: 95%;  
     font-size: 16px;
@@ -35,5 +25,39 @@
     color: #595959;
     border-radius: 25px;
     border: 1px solid lightgray;
-  } */
-/* VIENE DE CAROUSEL */
+  } 
+.filtro .linea{
+    border-bottom: 1px solid gray;
+    margin-right: 20px;
+}
+.filtro li a{
+    cursor: pointer;
+}
+.filtro li a:hover{
+    color: #007BFF;
+}
+/* Fin de Filtro */
+/* Inicio Tienda */
+.tienda .btn:hover{
+    background-color: #007BFF;
+}
+.tienda .arrow-top{
+    /* color: #8A8A8A; */
+    color: #007BFF;
+    font-size: 1.70em;
+    margin: 8px 0;
+}
+.tienda li{
+    list-style: none;
+}
+.tienda .text-muted{
+    font-size: 1.2em;
+}
+.tienda .card-title{
+    font-size: 1.2em;
+    height: 3em;
+}
+.tienda .btn:hover{
+    color: white;
+}
+/* Fin Tienda */

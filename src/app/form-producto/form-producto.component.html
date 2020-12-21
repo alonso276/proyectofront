@@ -1,8 +1,7 @@
 <body>
     <div class="content">
         <div class="text">Registro Producto</div>
-        <!-- Para formularios con input (type="file") => enctype="multipart/form-data" -->
-        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
             <div class="form-group field">
                 <span class="fas fa-sort-down"></span>
                 <select class="form-control custom-select custom-select-lg mb-3" formControlName="categoria">
@@ -58,13 +57,18 @@
                 certificado es requerido</p>
             <div class="form-group field">
                 <span class="fas fa-images"></span>
-                <input type="file" class="form-control" placeholder="Adjunta tu imagen (url)" formControlName="imagen">
+
+                 <!-- ?multer -->
+                <input type="file" class="form-control" name="imagen" (change)="onChange($event)">
+                
+
+                <!-- <input type="file" class="form-control" placeholder="Adjunta tu imagen (url)" formControlName="imagen"> -->
             </div>
-            <p class="text-primary aviso"
+            <!-- <p class="text-primary aviso"
                 *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">*La imagen es
-                requerida</p>
-            <input type="submit" value="Enviar" class="btn">
-            <!--[disabled]="!formulario.valid"-->
+                requerida</p> -->
+            <input type="submit"  class="btn" value="Enviar" [disabled]="!formulario.valid">
+        
         </form>
     </div>
 </body>

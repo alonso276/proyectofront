@@ -12,10 +12,13 @@ export class CarouselComponent implements OnInit {
 
   productores:Productor[];
   productos: Producto[];
-  productoresCat: Productor[];
+  // productoresCat: Productor[];
   
   comarcas:any[];
   comarcasSinRepetir:any[];
+
+  municipios:any[];
+  municipiosSinRepetir:any[]
 
   categorias:any[]
   categoriasSinRepetir:any[];
@@ -26,6 +29,7 @@ export class CarouselComponent implements OnInit {
      private productosService:ProductosService
   ) { 
     this.comarcas=[];
+    this.municipios=[];
     this.categorias=[];
   }
 
@@ -46,9 +50,21 @@ export class CarouselComponent implements OnInit {
         this.comarcas = this.comarcas.map(item => item.comarca)
         const data = new Set(this.comarcas);
         this.comarcasSinRepetir = [...data];
-        console.log(this.comarcasSinRepetir);
+        // console.log(this.comarcasSinRepetir);
       })
       .catch(error => console.log(error));
+
+
+      this.productoresService.getMunicipio()
+      .then(response => {
+        this.municipios = response;
+        this.municipios = this.municipios.map(item => item.municipio)
+        const data = new Set(this.municipios);
+        this.municipiosSinRepetir = [...data];
+        // console.log(this.comarcasSinRepetir);
+      })
+      .catch(error => console.log(error));
+
 
 
       // Método de producto--to delete in near future
@@ -87,16 +103,16 @@ export class CarouselComponent implements OnInit {
       //console.log($event.target.value);
     }
 
-
+    
 
     async onChangeCat($event) {
       if ($event.target.value === 'todos') {
-        this.productoresCat = await this.productoresService.getAll();
+        this.productores = await this.productoresService.getAll();
       } else {
-        this.productoresCat = await this.productoresService.getByCategory($event.target.value);
+        this.productores = await this.productoresService.getByCategory($event.target.value);
       }
-      //console.log(this.arrProductos);
-      //console.log($event.target.value);
+      // console.log(this.productores);
+      // console.log($event.target.value);
     }
 
 
@@ -110,10 +126,22 @@ export class CarouselComponent implements OnInit {
     }
 
 
+    async onChangeMunProd($event){
+
+      if ($event.target.value === 'todos') {
+        this.productores = await this.productoresService.getAll();
+     } else {
+       this.productores = await this.productoresService.getByMunicipio($event.target.value);
+       }
+     }
+
+    
+
+
      async onClickProductorId(pProductorId: number){
 
       this.productos = await this.productosService.getByProductorId(pProductorId);
-      console.log(this.productos)
+      // console.log(this.productos)
 
   
      }

@@ -1,4 +1,22 @@
 <!-- Inicio hero -->
+<!-- <app-perfil></app-perfil>
+
+<div *ngIf="isLogged()">
+
+  <button >LOGADO</button>
+</div> -->
+
+<!-- hero subnav logado -->
+<nav *ngIf="isLogged()" class="logado">
+
+  <p class="pt-3 pr-2">¡Únete a nuestra red de productores! <a [routerLink]="['registro/procedimiento']" title="Ir a Procedimiento">[Info]</a></p>
+   
+   <button type="button" class="btn register btn-outline-light btn-outline-secondary font-weight-bold" (click)="btnClick()">REGISTRO</button> 
+ 
+ </nav>
+
+<!-- Inicio hero -->
+
 <div class="hero">
   <div class="jumbotron text-center text-white">
     <!-- display-1a5 : tamano de texto-->
@@ -18,68 +36,71 @@
     <!-- <div class="hero">
     <div class="jumbotron text-center text-white"> -->
     <!-- display-1a5 : tamano de texto-->
-    <!-- <h1 class="lead">Nombre APP</h1>
-        <p class="p1">Dinamic Landscape Conectivity</p>
-        <div class="d-flex justify-content-center mb-3">
-            <p class="p2 col-6">Plataforma de conexión entre pequeños
-                productores
-                sostenibles de
-                proximidad y
-                consumidores responsables</p>
-        </div>
-        <button type="button" class="btn btn-outline-light btn-outline-secondary font-weight-bold"
-            title="Ir a Login">Unete</button>
+    <h1 class="lead p1">Dinamic Landscape Conectivity</h1>
+    <p class=""></p>
+    <div class="d-flex justify-content-center mb-3">
+      <p class="p2 col-6">Plataforma de conexión entre pequeños
+        productores
+        sostenibles de
+        proximidad y
+        consumidores responsables</p>
     </div>
+    <button type="button" role="link" onclick="window.location='/registro'"
+      class="btn btn-outline-light btn-outline-secondary font-weight-bold" title="Ir a Registro Usuario">Unete</button>
+  </div>
 </div>
- Fin hero 
-</div> 
 
-    <!--Inicio MVV-->
-    <div class="card-group">
-      <div class="card">
-
-        <div class="card-body" class="card border-info mb-3">
-          <div class="logomvv">
-            <img src="../assets/images/im1.png" class="rounded mx-auto d-block" alt="">
-          </div>
-          <h5 class="card-title-mvv">Misión</h5>
-          <p class="cardmvv-text">Promovemos los alimentos provenientes de pequeños agricultores de proximidad
-            a través de relaciones comerciales justas, ofreciendo un consumo responsable y desarrollo social.
-            Evitamos intermediarios que incrementan el precio en la cadena de producción.</p>
-          <img class="card-img-top" src="../assets/images/t1.jpg" alt="Card image cap">
-
+<!-- Fin hero  -->
+<!--Inicio MVV-->
+<div class="container mb-5">
+  <div class="card-group">
+    <div class="card">
+      <div class="card-body" class="card border-info mb-3">
+        <div class="logomvv">
+          <img src="../assets/images/im1.png" class="rounded mx-auto d-block" alt="">
         </div>
-      </div>
-      <div class="card">
-
-        <div class="card-body" class="card border-info mb-3">
-          <div class="logomvv">
-            <img src="../assets/images/im2.png" alt="" class="rounded mx-auto d-block">
+        <h5 class="card-title-mvv">Misión</h5>
+        
+        <p class="cardmvv-text">Promovemos los alimentos provenientes de pequeños agricultores de proximidad
+          a través de relaciones comerciales justas, ofreciendo un consumo responsable y desarrollo social.
+          Evitamos intermediarios que incrementan el precio en la cadena de producción.</p>
+          <div class="imgadj">
+             <img class="card-img-top" src="../assets/images/t1.jpg" alt="Card image cap">
           </div>
-          <h5 class="card-title-mvv">Visión</h5>
-          <p class="cardmvv-text">Creamos una comunidad de clientes y amigos que nos ayuden a dar forma a un consumo
-            libre de tóxicos que apueste por la alimentación sana y el respeto al medio ambiente. Ofrecemos al
-            consumidor una información detallada de como se han cultivado y elaborado.</p>
-          <img class="card-img-top" src="../assets/images/t2.jpg" alt="Card image cap">
-        </div>
       </div>
-
-      <div class="card">
-
-        <div class="card-body" class="card border-info mb-3">
-          <div class="logomvv">
-            <img src="../assets/images/im3.png" alt="" class="rounded mx-auto d-block">
-          </div>
-          <h5 class="card-title-mvv">Valores</h5>
-          <p class="cardmvv-text">
-            Fomentamos el proceso de elaboración de alimentos ecológicos, mucho más lento que el de uno tradicional.
-            Respetando los ciclos naturales, lo cual implica mayor mano de obra. Contribuyendo al desarrollo de las
-            regiones y los entornos donde se producen.</p>
-          <img class="card-img-top" src="../assets/images/t3.jpg" alt="Card image cap">
-        </div>
-      </div>
-
     </div>
-    <!--fin MVV-->
-    <app-mapa></app-mapa>
-    <app-carousel></app-carousel>
+    <div class="card">
+      <div class="card-body" class="card  mb-3">
+        <div class="logomvv">
+          <img src="../assets/images/im2.png" alt="" class="rounded mx-auto d-block">
+        </div>
+        <h5 class="card-title-mvv">Visión</h5>
+        <p class="cardmvv-text">Creamos una comunidad de clientes y amigos que nos ayuden a dar forma a un consumo
+          libre de tóxicos que apueste por la alimentación sana y el respeto al medio ambiente. Ofrecemos al
+          consumidor una información detallada de como se han cultivado y elaborado.</p>
+          <div class="imgadj"> 
+              <img class="card-img-top" src="../assets/images/t2.jpg" alt="Card image cap">
+          </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body" class="card border-info mb-3">
+        <div class="logomvv">
+          <img src="../assets/images/im3.png" alt="" class="rounded mx-auto d-block">
+        </div>
+        <h5 class="card-title-mvv">Valores</h5>
+        <p class="cardmvv-text">
+          Fomentamos el proceso de elaboración de alimentos ecológicos, mucho más lento que el de uno tradicional.
+          Respetando los ciclos naturales, lo cual implica mayor mano de obra. Contribuyendo al desarrollo de las
+          regiones y los entornos donde se producen.</p>
+          <div class="imgadj">
+            <img class="card-img-top" src="../assets/images/t3.jpg" alt="Card image cap">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin MVV-->
+
+<app-carousel ></app-carousel>
+<app-mapa></app-mapa>

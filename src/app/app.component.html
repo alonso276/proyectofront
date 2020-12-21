@@ -2,36 +2,59 @@
 <header class="bg-dark text-white container-fluid">
     <!-- nav .container -->
     <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark container">
-        <a class="navbar-brand" href="./indice" title="Ir a Inicio">
+            <a class="navbar-brand" [routerLink]="['/inicio']" title="Ir a Inicio">
             <!-- <img class="logo" src="./assets/images/logo.png" alt=""> -->
-            <b>con +</b>
+            <b class="ml-0">con +</b>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- text-center alineo menu centrado en movil -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- ml-auto margin left -->
             <div class="navbar-nav ml-auto active">
                 <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="#">MVV</a>
-                <a class="nav-link" href="#">Cerca de ti</a>
-                <a class="nav-link" href="/tienda">Productos</a>
+                <a class="nav-link" href="#cercadeti">Cerca de ti </a>
                 <a class="nav-link" href="#">Eventos</a>
                 <a class="nav-link" href="#">Contacto</a>
+                <!-- navegador registro desplegable -->
+                <div id="registro">
+                    <ul class="nav">
+                        <li class="texto">Registro <i class="fas fa-angle-down"></i>
+                            <ul>
+                                <li><a class="t1" [routerLink]="['inicio/registro/procedimiento']"
+                                        title="Ir a Procedimiento de Registro">Procedimiento</a></li>
+                                <li><a [routerLink]="['/registro']" title="Ir a Registro Usuario">Nuevo Usuario</a></li>
+                                <li><a [routerLink]="['/productores/nuevo']"
+                                        title="Ir a Registro Productor &#10;Primero has de registrarte &#10;como Usuario"
+                                        (click)="isLoggedProductor()">Nuevo
+                                        Productor</a>
+                                </li>
+                                <li><a [routerLink]="['/productos/nuevo']"
+                                        title="Ir a Registro Producto&#10;Primero has de registrarte &#10;como Productor"
+                                        (click)="isLoggedProductor2()">Nuevo Producto</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <a class="nav-link" [routerLink]="['/tienda']">Tienda</a>
                 <div class="linea"></div>
-                <a class="nav-link active" href="/login">LOGIN</a>
+                <a class="nav-link active login" [routerLink]="['/login']">LOGIN</a>
             </div>
         </div>
-    </nav>
+        <!-- Icono de user logado -->
+        <i class="fas fa-user-circle" title="Logout" *ngIf="isLogged()" (click)="onClickLogout()"></i>
+        <!-- <p class="pt-3 pl-3 text-primary">{{usuariosService.recuperarUsuario().nombreUsuario}}</p>
+    </nav> -->
 </header>
+<!-- FIN header -->
 <div>
     <main>
         <router-outlet></router-outlet>
     </main>
 </div>
-<!-- FIN header -->
 
 <!-- INICIO FOOTER -->
 <footer class=" bg-dark page-footer font-small blue pt-4">
@@ -44,7 +67,7 @@
                 <div class="col-md-6 mt-md-0 mt-3">
                     <!-- Content -->
                     <h5 class="text-uppercase">servicios</h5>
-                    <p>Conviértete en productor</p>
+                    <p><a class="enlace" [routerLink]="['/productores/nuevo']">Conviértete en productor</a> </p>
                 </div>
                 <!-- Grid column -->
                 <hr class="clearfix w-100 d-md-none pb-3">
@@ -73,7 +96,7 @@
                     <!-- Links -->
                     <h5 class="text-uppercase">Contacto <i class="far fa-envelope"></i></h5>
                     <address>
-                        <a href="mailto:webmaster@example.com">contacto@tierradesabores.es</a><br>
+                        <a [routerLink]="['mailto:webmaster@example.com']">contacto@tierradesabores.es</a><br>
                         Dirección:<br>
                         C/Amor de Dios,17<br>
                         28008<br>
@@ -87,7 +110,7 @@
         <!-- Footer Links -->
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> Tierra de sabores</a>
+            <a [routerLink]="['https://mdbootstrap.com/']"> Tierra de sabores</a>
         </div>
         <!-- Copyright -->
     </div>

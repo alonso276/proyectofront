@@ -10,7 +10,6 @@ import { MapaComponent } from './mapa/mapa.component'
 import { FiltroComponent } from './filtro/filtro.component';
 import { CalendarioComponent } from './calendario/calendario.component';
 import { TiendaComponent } from './tienda/tienda.component';
-import { ProductosComponent } from './productos/productos.component';
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { FormProductoresComponent } from './form-productores/form-productores.component';
 import { FormProductoComponent } from './form-producto/form-producto.component';
@@ -24,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CarouselComponent } from './carousel/carousel.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ProcedimientoComponent } from './procedimiento/procedimiento.component';
 
 
 @NgModule({
@@ -33,7 +34,6 @@ import { CarouselComponent } from './carousel/carousel.component';
     FiltroComponent,
     CalendarioComponent,
     TiendaComponent,
-    ProductosComponent,
     FormUsuariosComponent,
     FormProductoresComponent,
     FormProductoComponent,
@@ -42,7 +42,9 @@ import { CarouselComponent } from './carousel/carousel.component';
     ProductorDetalleComponent,
     Error404Component,
     CestaComponent,
-    CarouselComponent
+    CarouselComponent,
+    PerfilComponent,
+    ProcedimientoComponent
   ],
   imports: [
     BrowserModule,
