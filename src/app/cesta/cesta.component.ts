@@ -13,9 +13,11 @@ export class CestaComponent implements OnInit {
   arrCarrito: Producto[];
   muestraLista: boolean;
   constructor(
+
     private carritoService: CarritoService,
     private router: Router,
-    private usuariosService: UsuariosService
+    //para poder usar en html (public)
+    public usuariosService: UsuariosService
   ) {
     this.arrCarrito = [];
     this.muestraLista = false;
@@ -25,7 +27,7 @@ export class CestaComponent implements OnInit {
     //Recibo Array desde carrito.service
     this.arrCarrito = this.carritoService.getArrayCarrito();
     //console.log(this.arrCarrito);
-    //  this.usuariosService.recuperarUsuario();
+    this.usuariosService.recuperarUsuario();
     
   }
   //Borra producto y manda mensaje de confirmación (boolean)
@@ -71,9 +73,18 @@ export class CestaComponent implements OnInit {
   }
   //! TBI
   sendCarrito() {
-    this.carritoService.addTbiTable();
-    localStorage.clear();
-    alert('Su Cesta se ha enviado correctamente.[Elementos insertados en tabla tbi');
-    this.router.navigate(['/inicio']);
+
+    if(localStorage.getItem('token_pf')){
+
+         this.carritoService.addTbiTable();
+         localStorage.removeItem('carrito');
+         alert('Su compra se ha realizado correctamente.[Elementos insertados en tabla tbi');
+         
+
+    }else{
+        alert('Has de registrarte como Usuario y logarte para poder realizar tu compra')
+    }
+        this.router.navigate(['/inicio']);
+
   }
 }

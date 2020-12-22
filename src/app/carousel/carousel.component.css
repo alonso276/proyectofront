@@ -8,8 +8,6 @@
 	max-width: 900px;
 	margin: 0 auto;
 	
-
-
 }
 /* para que me centre la card si hay solo 1 resultado */
 .prodcar{
@@ -20,7 +18,7 @@
 
 .card {
 	min-width: 200px;
-	max-width: 400px;
+	max-width: 300px;
 	display: flex;
 	justify-content:center;
 	align-items: center;
@@ -29,7 +27,7 @@
 	margin-top: 20px;
 	padding: 1.5%;
 	box-sizing: border-box;
-	border:3px solid black;
+	border:1px solid black;
 	
 }
 .infopromain{
@@ -67,7 +65,7 @@
 .divcolor p{
 	 
 	 color:white;
-	 font-size:1.2rem;
+	 font-size:1.8rem;
 	 
 	 
 }

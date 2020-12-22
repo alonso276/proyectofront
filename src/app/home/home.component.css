@@ -27,7 +27,19 @@
     font-size: 1.1rem;
     margin-left:1.2rem;
 } 
- @media(max-width: 48.000em){
+
+ .hero .jumbotron{
+     
+    background-image: url("/assets/images/foto_hero.jpg"); 
+   
+    /* background-color: #00bc9b !important; */
+    background-size: cover;
+    height: 90vh;
+    opacity: 1;
+    margin-bottom: 0;
+}
+ 
+@media(max-width: 48.000em){
     
     .logado{
     display:flex;
@@ -40,18 +52,8 @@
   
  }
 
+/* Inicio Hero */
 
-* Inicio Hero */
-.hero .jumbotron{
-     
-    background-image: url("/assets/images/foto_hero.jpg");
-    z-index:1;
-    /* background-color: #00bc9b; */
-    background-size: cover;
-    height: 90vh;
-    opacity: 1;
-    margin-bottom: 0;
-}
 .hero .lead{
     font-size: 2em;
     font-weight: 700;
@@ -91,6 +93,9 @@
 
 
 /**Inicio mvv**/
+.container{
+      margin-top:6rem;
+}
 .logomvv img{
     width:70px;
     height:70px;
@@ -117,6 +122,7 @@
     width: 100%;
     height: auto;
     margin-top:20px;
+    margin-bottom:4rem;
 }
 .card-img-top{
 

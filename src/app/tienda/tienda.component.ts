@@ -112,4 +112,10 @@ export class TiendaComponent implements OnInit {
   ocultarListaPorCom() {
     this.muestraListaPorCom = !this.muestraListaPorCom;
   }
+  //link navegar del navegador en puntos la pagina principal
+  scrollToElement($element): void {
+    //console.log($element);
+    const div = document.getElementById($element)
+    div.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+}
 }

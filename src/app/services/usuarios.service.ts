@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { JwtHelperService } from "@auth0/angular-jwt";
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 export interface Usuario {
   nombre: string;
@@ -43,12 +43,13 @@ export class UsuariosService {
     }else
     return false;
    }
+
   //  /?Descodificar Token
-    // recuperarUsuario() {
-    // const helper = new JwtHelperService();
-    // const decodedToken = helper.decodeToken(localStorage.getItem('token_pf'));
-    // //console.log(decodedToken);
-    // return decodedToken;
-  }
+    recuperarUsuario() {
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(localStorage.getItem('token_pf'));
+        console.log(decodedToken);
+    return decodedToken;
+        }
 
 }

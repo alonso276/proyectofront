@@ -42,9 +42,9 @@
                     <h2 class="modal-title mt-1 ml-3" id="exampleModalLabel">Mi Cesta</h2>
                    
                     <!-- ?Nombre y apellidos en cesta -->
-                    <!-- <p class="ml-3 mt-3 nombre-usuario">Nombre Usuario:
-                        {{usuariosService.recuperarUsuario().nombreUsuario}}
-                        {{usuariosService.recuperarUsuario().nombreApellidos}}</p> -->
+                    <p class="ml-3 mt-3 nombre-usuario">Nombre Usuario:
+                        {{usuariosService.recuperarUsuario()?.nombreUsuario}}
+                        {{usuariosService.recuperarUsuario()?.nombreApellidos}}</p>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

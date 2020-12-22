@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuariosService } from './services/usuarios.service';
 //import * as $ from 'jquery';
 @Component({
   selector: 'app-root',
@@ -7,9 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public usuariosService:UsuariosService
+    ) { }
   ngOnInit() {
-    //console.log($);
+    this.usuariosService.recuperarUsuario();
+
   }
   isLogged(): boolean {
     if (localStorage.getItem('token_pf')) {
@@ -42,5 +47,12 @@ export class AppComponent {
       return false;
     }
   }
+   //link navegar del navegador en puntos la pagina principal
+  scrollToElement($element): void {
+    //console.log($element);
+    const div = document.getElementById($element)
+    div.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  }
+
 
 }

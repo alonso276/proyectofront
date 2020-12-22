@@ -14,11 +14,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- ml-auto margin left -->
             <div class="navbar-nav ml-auto active">
-                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="#">MVV</a>
-                <a class="nav-link" href="#cercadeti">Cerca de ti </a>
-                <a class="nav-link" href="#">Eventos</a>
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" (click)="scrollToElement('mvv')">MVV</a>
+                <a class="nav-link" (click)="scrollToElement('cercadeti')">Cerca de ti</a>
+                <a class="nav-link" (click)="scrollToElement('mapa')">Mapa</a>
+                <a class="nav-link" (click)="scrollToElement('contacto')">Contacto</a>
                 <!-- navegador registro desplegable -->
                 <div id="registro">
                     <ul class="nav">
@@ -46,8 +46,10 @@
         </div>
         <!-- Icono de user logado -->
         <i class="fas fa-user-circle" title="Logout" *ngIf="isLogged()" (click)="onClickLogout()"></i>
-        <!-- <p class="pt-3 pl-3 text-primary">{{usuariosService.recuperarUsuario().nombreUsuario}}</p>
-    </nav> -->
+        
+      <!-- interrogación para que si no hay usuario no sigan con el método  -->
+     <p class="pt-3 pl-3 text-primary">{{usuariosService.recuperarUsuario()?.nombreUsuario}}</p>
+    </nav>
 </header>
 <!-- FIN header -->
 <div>
@@ -60,7 +62,7 @@
 <footer class=" bg-dark page-footer font-small blue pt-4">
     <div class="container">
         <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left">
+        <div class="container-fluid text-center text-md-left" id="contacto">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->
@@ -96,7 +98,7 @@
                     <!-- Links -->
                     <h5 class="text-uppercase">Contacto <i class="far fa-envelope"></i></h5>
                     <address>
-                        <a [routerLink]="['mailto:webmaster@example.com']">contacto@tierradesabores.es</a><br>
+                        <a [routerLink]="['mailto:webmaster@example.com']">contacto@con_sumo.es</a><br>
                         Dirección:<br>
                         C/Amor de Dios,17<br>
                         28008<br>
@@ -109,8 +111,8 @@
         </div>
         <!-- Footer Links -->
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a [routerLink]="['https://mdbootstrap.com/']"> Tierra de sabores</a>
+        <div class="footer-copyright text-center pr-3">2020 Autores: Lidia Alonso + Miguel Soto 
+            <a href="https://www.neoland.es/" class="ml-2"> Neoland</a>
         </div>
         <!-- Copyright -->
     </div>

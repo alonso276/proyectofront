@@ -18,29 +18,36 @@
                             </div>
                         </div>
                         <ul>
-                            <p class="mb-1 mt-3"><b>Cerca de mi:</b></p>
+                            <p class="mb-1 mt-3"><b>Cerca de mí:</b></p>
                             <p><b>Selecciona Productos por Productor:</b></p>
                             <li><a (click)="onClickMostrarTodos()">Todos</a></li>
                             <li *ngFor="let productor of productores"> <a
-                                    (click)="onClickProductorId(productor.fk_usuario)">{{productor.nombre_empresa}} -
-                                    id: {{productor.id}} (click)</a>
+                                    (click)="onClickProductorId(productor.fk_usuario)">{{productor.nombre_empresa}} - (click)</a>
+                                    <!-- id: {{productor.id}} -->
                             </li>
                         </ul>
                         <!-- Linea de separacion entre productores y productos -->
                         <div class="linea"></div>
                         <ul>
-                            <p class="mb-1 mt-3"><b><a (click)="ocultarListaPorCat()">Selecciona Productos por
-                                        Categoria:</a></b></p>
+
+                            <div (click)="ocultarListaPorCat()">
+                            <p class="mb-1 mt-3"><b><a>Selecciona Productos por
+                                        Categoría:</a></b></p>
+                            <i class="fas fa-angle-down d-flex justify-content-center"></i>
+                            </div>
                             <div *ngIf="muestraListaPorCat">
                                 <li><a (click)="onClickMostrarTodos()">Todas</a></li>
                                 <li *ngFor="let categoria of categoriasSinRepetir"><a
-                                        (click)="onClickProductCategoria(categoria)">{{categoria}}
+                                        (click)="onClickProductCategoria(categoria)">{{categoria | titlecase}}
                                         (click)</a></li>
                             </div>
                         </ul>
                         <ul>
-                            <p class="mb-1 mt-3"><b><a (click)="ocultarListaPorCom()">Selecciona Productos por
+                            <div (click)="ocultarListaPorCom()">
+                            <p class="mb-1 mt-3"><b><a>Selecciona Productos por
                                         Comarca:</a></b></p>
+                            <i class="fas fa-angle-down d-flex justify-content-center"></i>
+                            </div>
                             <div *ngIf="muestraListaPorCom">
                                 <li><a (click)="onClickMostrarTodos()">Todas</a></li>
                                 <li *ngFor="let comarca of comarcasSinRepetir"><a
@@ -61,11 +68,11 @@
                         <!-- <li *ngFor="let productor of productores">{{productor.nombre_empresa}}</li> -->
                         <li class="col-xl-4 col-md-6 mt-4" *ngFor="let producto of productos">
                             <div>
-                                <div class="card border-0">
+                                <div class="card">
                                     <img class="card-img-top" src="http://localhost:3000/images/{{producto.imagen}}" alt="">
                                     <div class="card-body p-3">
                                         <h3 class="card-title">{{producto.nombre}}</h3>
-                                        <!-- <p class="card-text">PRODUCTOR: {{producto.productor}}</p> -->
+                                        <p class="card-text">PRODUCTOR: {{producto.productor}}</p>
                                         <!-- Productor-detalleComponent -->
                                         <!-- <a class="reset-anchor text-gray" [routerLink]="['/productor', productor?.id]">{{ productor?.nombre_empresa | uppercase }}</a> -->
                                         <p class="card-text">{{producto.descripcion}}</p>
@@ -80,7 +87,7 @@
                                                 <img src="../assets/images/icono-eco.png" *ngSwitchCase="'eco'"
                                                     height="55px">
                                                 <img src="../assets/images/icono-vegan.jpg" *ngSwitchCase="'vegan'"
-                                                    height="55px">
+                                                    height="45px">
                                             </div>
                                         </div>
                                         <a class="btn btn-outline-secondary"
@@ -91,7 +98,7 @@
                         </li>
                     </div>
                 </ul>
-                <a href="#top" class="arrow-top d-flex flex-row-reverse"><i class="fas fa-angle-double-up"></i></a>
+                <a (click)="scrollToElement('top')" class="arrow-top d-flex flex-row-reverse"><i class="fas fa-angle-double-up"></i></a>
             </div>
             <!-- Fin Tienda Productos -->
             <!-- Cesta -->

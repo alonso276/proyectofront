@@ -35,9 +35,10 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
+     console.log('test')
       this.productoresService.getAll()
         .then(response => {
+          
           this.productores = response;
         })
         .catch(error => console.log(error));
